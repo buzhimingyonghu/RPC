@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.15)
+project(net)
+include_directories(${INCLUDE_PATH_COMMON})
+link_directories(${LIBPATH})
+link_libraries(${COMMONLIB})
+file(GLOB src ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+set(LIBRARY_OUTPUT_PATH ${LIBPATH})
+add_library(${NETLIB} STATIC ${src})
