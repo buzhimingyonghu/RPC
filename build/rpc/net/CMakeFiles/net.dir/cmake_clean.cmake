@@ -5,6 +5,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/net.dir/eventloop.cpp.o.d"
   "CMakeFiles/net.dir/fd_event.cpp.o"
   "CMakeFiles/net.dir/fd_event.cpp.o.d"
+  "CMakeFiles/net.dir/time_event.cpp.o"
+  "CMakeFiles/net.dir/time_event.cpp.o.d"
+  "CMakeFiles/net.dir/timer.cpp.o"
+  "CMakeFiles/net.dir/timer.cpp.o.d"
   "CMakeFiles/net.dir/wakeup_fd_event.cpp.o"
   "CMakeFiles/net.dir/wakeup_fd_event.cpp.o.d"
 )

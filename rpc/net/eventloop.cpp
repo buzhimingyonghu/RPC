@@ -59,11 +59,45 @@ namespace rpc
         }
 
         initWakeUpFdEvent();
+        initTimer();
         INFOLOG("succ create event loop in thread %d", m_thread_id);
         t_current_eventloop = this;
     }
+    void Eventloop::initWakeUpFdEvent()
+    {
+        m_wakeup_fd = eventfd(0, EFD_NONBLOCK);
+        if (m_wakeup_fd < 0)
+        {
+            ERRORLOG("failed to created wakeup_fd in eventloop,eventfd request failede,error info [%d]", errno);
+            exit(0);
+        }
+        INFOLOG("m_wakeup_fd=%d", m_wakeup_fd);
+        m_wakeup_fd_event = new WakeUp_Fd_Event(m_wakeup_fd);
+        m_wakeup_fd_event->setListenCallBack(FdEvent::TriggerEvent::IN_EVENT, [this]()
+                                             {
+            char buf[8];
+            while(read(m_wakeup_fd,buf,8)!=-1&&errno!=EAGAIN){}
+               DEBUGLOG("read full bytes from wakeup fd[%d]",m_wakeup_fd); });
+        addEpollEvent(m_wakeup_fd_event);
+    }
+    void Eventloop::initTimer()
+    {
+        m_timer = new Timer();
+        addEpollEvent(m_timer);
+    }
     Eventloop::~Eventloop()
     {
+        close(m_epoll_fd);
+        if (m_wakeup_fd_event)
+        {
+            delete m_wakeup_fd_event;
+            m_wakeup_fd_event = nullptr;
+        }
+        if (m_timer)
+        {
+            delete m_timer;
+            m_timer = nullptr;
+        }
     }
     void Eventloop::run()
     {
@@ -170,24 +204,13 @@ namespace rpc
         if (is_wake_up)
             wakeup();
     }
+    void Eventloop::addTimerEvent(TimerEvent::s_ptr event)
+    {
+        m_timer->addTimeEvent(event);
+    }
     void Eventloop::dealWakeUp()
     {
     }
-    void Eventloop::initWakeUpFdEvent()
-    {
-        m_wakeup_fd = eventfd(0, EFD_NONBLOCK);
-        if (m_wakeup_fd < 0)
-        {
-            ERRORLOG("failed to created wakeup_fd in eventloop,eventfd request failede,error info [%d]", errno);
-            exit(0);
-        }
-        INFOLOG("m_wakeup_fd=%d", m_wakeup_fd);
-        m_wakeup_fd_event = new WakeUp_Fd_Event(m_wakeup_fd);
-        m_wakeup_fd_event->setListenCallBack(FdEvent::TriggerEvent::IN_EVENT, [this]()
-                                             {
-            char buf[8];
-            while(read(m_wakeup_fd,buf,8)!=-1&&errno!=EAGAIN){}
-               DEBUGLOG("read full bytes from wakeup fd[%d]",m_wakeup_fd); });
-        addEpollEvent(m_wakeup_fd_event);
-    }
+
 }
+// -194

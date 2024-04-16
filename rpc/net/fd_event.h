@@ -13,6 +13,7 @@ namespace rpc
             OUT_EVENT = EPOLLOUT
         };
         FdEvent(int fd);
+        FdEvent();
         ~FdEvent();
         void setListenCallBack(TriggerEvent event_type, std::function<void()> callback);
         // 获得对应的回调函数
@@ -35,3 +36,4 @@ namespace rpc
     };
 
 }
+// 47-39

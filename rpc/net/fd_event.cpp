@@ -7,6 +7,11 @@ namespace rpc
         memset(&m_listen_events, 0, sizeof(m_listen_events));
     }
 
+    FdEvent::FdEvent()
+    {
+        memset(&m_listen_events, 0, sizeof(m_listen_events));
+    }
+
     rpc::FdEvent::~FdEvent()
     {
     }
@@ -40,3 +45,4 @@ namespace rpc
         }
     }
 }
+// 45 - 43

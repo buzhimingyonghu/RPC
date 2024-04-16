@@ -44,6 +44,12 @@ int main()
                                 int cfd = accept(lfd, reinterpret_cast<sockaddr *>(&peer_addr), &peer_addr_len);
                                 DEBUGLOG("success get client fd[%d], peer addr: [%s:%d]", cfd, inet_ntoa(peer_addr.sin_addr), ntohs(peer_addr.sin_port)); });
     eventloop->addEpollEvent(&event);
+    int i = 0;
+    rpc::TimerEvent::s_ptr timer_event = std::make_shared<rpc::TimerEvent>(
+        1000, true, [&i]()
+        { INFOLOG("trigger timer event, count=%d", i++); });
+
+    eventloop->addTimerEvent(timer_event);
     eventloop->run();
     return 0;
 }

@@ -178,6 +178,54 @@ fd_event.cpp.s:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event.cpp.s
 .PHONY : fd_event.cpp.s
 
+time_event.o: time_event.cpp.o
+.PHONY : time_event.o
+
+# target to build an object file
+time_event.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/time_event.cpp.o
+.PHONY : time_event.cpp.o
+
+time_event.i: time_event.cpp.i
+.PHONY : time_event.i
+
+# target to preprocess a source file
+time_event.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/time_event.cpp.i
+.PHONY : time_event.cpp.i
+
+time_event.s: time_event.cpp.s
+.PHONY : time_event.s
+
+# target to generate assembly for a file
+time_event.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/time_event.cpp.s
+.PHONY : time_event.cpp.s
+
+timer.o: timer.cpp.o
+.PHONY : timer.o
+
+# target to build an object file
+timer.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/timer.cpp.o
+.PHONY : timer.cpp.o
+
+timer.i: timer.cpp.i
+.PHONY : timer.i
+
+# target to preprocess a source file
+timer.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/timer.cpp.i
+.PHONY : timer.cpp.i
+
+timer.s: timer.cpp.s
+.PHONY : timer.s
+
+# target to generate assembly for a file
+timer.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/timer.cpp.s
+.PHONY : timer.cpp.s
+
 wakeup_fd_event.o: wakeup_fd_event.cpp.o
 .PHONY : wakeup_fd_event.o
 
@@ -217,6 +265,12 @@ help:
 	@echo "... fd_event.o"
 	@echo "... fd_event.i"
 	@echo "... fd_event.s"
+	@echo "... time_event.o"
+	@echo "... time_event.i"
+	@echo "... time_event.s"
+	@echo "... timer.o"
+	@echo "... timer.i"
+	@echo "... timer.s"
 	@echo "... wakeup_fd_event.o"
 	@echo "... wakeup_fd_event.i"
 	@echo "... wakeup_fd_event.s"
