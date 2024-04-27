@@ -69,28 +69,28 @@ namespace rpc
         std::vector<TimerEvent::s_ptr> repeated_event;                        // 设置重复定时器事件，下一次执行
         std::vector<std::pair<int64_t, std::function<void()>>> execute_tasks; // 执行的事件
         m_mutex.lock();
-        for (auto it = m_pending_events.begin(); it != m_pending_events.end(); ++it)
+        auto it = m_pending_events.begin();
+        for (; it != m_pending_events.end(); ++it)
         {
+            if ((*it).first <= now)
             {
-                if ((*it).first <= now)
+                if (!(*it).second->get_isCancled())
                 {
-                    if (!(*it).second->is_Cancled())
-                    {
-                        repeated_event.push_back((*it).second);
-                        execute_tasks.push_back({(*it).second->getArriveTime(), (*it).second->getCallBack()});
-                    }
-                }
-                else
-                {
-                    m_pending_events.erase(m_pending_events.begin(), it);
-                    break;
+                    repeated_event.push_back((*it).second);
+                    execute_tasks.push_back({(*it).second->getArriveTime(), (*it).second->getCallBack()});
                 }
             }
+            else
+            {
+                break;
+            }
         }
+        m_pending_events.erase(m_pending_events.begin(), it);
+        DEBUGLOG("m_pending_events.size=%d", m_pending_events.size());
         m_mutex.unlock();
         for (auto &it : repeated_event)
         {
-            if (it->isRepeated())
+            if (it->get_isRepeated())
             {
                 it->resetArriveTime();
                 addTimeEvent(it);

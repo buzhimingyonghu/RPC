@@ -6,7 +6,7 @@ namespace rpc
     TimerEvent::TimerEvent(int interval, bool is_repeated, std::function<void()> callback)
     {
         m_interval = interval;
-        m_is_repeated = (is_repeated);
+        m_is_repeated = is_repeated;
         m_task = callback;
         resetArriveTime();
     }

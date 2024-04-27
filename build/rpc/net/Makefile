@@ -178,6 +178,54 @@ fd_event.cpp.s:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event.cpp.s
 .PHONY : fd_event.cpp.s
 
+io_thread.o: io_thread.cpp.o
+.PHONY : io_thread.o
+
+# target to build an object file
+io_thread.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread.cpp.o
+.PHONY : io_thread.cpp.o
+
+io_thread.i: io_thread.cpp.i
+.PHONY : io_thread.i
+
+# target to preprocess a source file
+io_thread.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread.cpp.i
+.PHONY : io_thread.cpp.i
+
+io_thread.s: io_thread.cpp.s
+.PHONY : io_thread.s
+
+# target to generate assembly for a file
+io_thread.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread.cpp.s
+.PHONY : io_thread.cpp.s
+
+io_thread_pool.o: io_thread_pool.cpp.o
+.PHONY : io_thread_pool.o
+
+# target to build an object file
+io_thread_pool.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o
+.PHONY : io_thread_pool.cpp.o
+
+io_thread_pool.i: io_thread_pool.cpp.i
+.PHONY : io_thread_pool.i
+
+# target to preprocess a source file
+io_thread_pool.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.i
+.PHONY : io_thread_pool.cpp.i
+
+io_thread_pool.s: io_thread_pool.cpp.s
+.PHONY : io_thread_pool.s
+
+# target to generate assembly for a file
+io_thread_pool.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.s
+.PHONY : io_thread_pool.cpp.s
+
 time_event.o: time_event.cpp.o
 .PHONY : time_event.o
 
@@ -265,6 +313,12 @@ help:
 	@echo "... fd_event.o"
 	@echo "... fd_event.i"
 	@echo "... fd_event.s"
+	@echo "... io_thread.o"
+	@echo "... io_thread.i"
+	@echo "... io_thread.s"
+	@echo "... io_thread_pool.o"
+	@echo "... io_thread_pool.i"
+	@echo "... io_thread_pool.s"
 	@echo "... time_event.o"
 	@echo "... time_event.i"
 	@echo "... time_event.s"

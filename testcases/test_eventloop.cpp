@@ -4,11 +4,11 @@
 #include "fd_event.h"
 #include <arpa/inet.h>
 #include <string.h>
-int main()
+#include "io_thread_pool.h"
+#include "io_thread.h"
+#include <unistd.h>
+void test_io_thread()
 {
-    rpc::Config::SetGlobalConfig("../conf/rocket.xml");
-    rpc::Logger::InitGlobalLogger();
-    rpc::Eventloop *eventloop = new rpc::Eventloop();
     int lfd = socket(AF_INET, SOCK_STREAM, 0);
     if (lfd == -1)
     {
@@ -43,13 +43,30 @@ int main()
                                 // 这行代码的作用是接受客户端的连接请求，创建一个新的套接字 cfd，并将客户端的地址信息存储在 peer_addr 中。
                                 int cfd = accept(lfd, reinterpret_cast<sockaddr *>(&peer_addr), &peer_addr_len);
                                 DEBUGLOG("success get client fd[%d], peer addr: [%s:%d]", cfd, inet_ntoa(peer_addr.sin_addr), ntohs(peer_addr.sin_port)); });
-    eventloop->addEpollEvent(&event);
+
     int i = 0;
     rpc::TimerEvent::s_ptr timer_event = std::make_shared<rpc::TimerEvent>(
         1000, true, [&i]()
         { INFOLOG("trigger timer event, count=%d", i++); });
 
-    eventloop->addTimerEvent(timer_event);
-    eventloop->run();
+    rpc::IOThreadPoll io_thread_poll(2);
+    rpc::IOThread *io_thread = io_thread_poll.getIOThread();
+    io_thread->getEventLoop()->addEpollEvent(&event);
+    io_thread->getEventLoop()->addTimerEvent(timer_event);
+
+    rpc::IOThread *io_thread1 = io_thread_poll.getIOThread();
+    io_thread1->getEventLoop()->addEpollEvent(&event);
+    io_thread1->getEventLoop()->addTimerEvent(timer_event);
+
+    io_thread_poll.start();
+    io_thread->getEventLoop()->addTimerEvent(timer_event);
+    io_thread_poll.join();
+}
+int main()
+{
+    rpc::Config::SetGlobalConfig("../conf/rocket.xml");
+    rpc::Logger::InitGlobalLogger();
+    test_io_thread();
+
     return 0;
 }

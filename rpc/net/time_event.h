@@ -18,11 +18,11 @@ namespace rpc
         {
             m_is_cancled = is_cancled;
         }
-        inline bool is_Cancled()
+        inline bool get_isCancled()
         {
             return m_is_cancled;
         }
-        inline bool isRepeated()
+        inline bool get_isRepeated()
         {
             return m_is_repeated;
         }
