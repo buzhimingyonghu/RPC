@@ -64,7 +64,7 @@ void test_io_thread()
 }
 int main()
 {
-    rpc::Config::SetGlobalConfig("../conf/rocket.xml");
+    rpc::Config::SetGlobalConfig("../conf/rpc.xml");
     rpc::Logger::InitGlobalLogger();
     test_io_thread();
 

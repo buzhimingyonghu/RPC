@@ -1,16 +1,14 @@
 cmake_minimum_required(VERSION 3.15)
-project(test)
+project(tcp)
 include_directories(
     ${INCLUDE_PATH_COMMON}
     ${INCLUDE_PATH_NET}
-    ${INCLUDE_PATH_TCP}
 )
 link_directories(${LIBPATH})
 link_libraries(
     ${COMMONLIB}
     ${NETLIB}
-    ${TCPLIB}
 )
-set(EXECUTABLE_OUTPUT_PATH ${EXECPATH})
-add_executable(test_tcp test_tcp.cpp)
-add_executable(test_client test_client.cpp)
+file(GLOB src ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+set(LIBRARY_OUTPUT_PATH ${LIBPATH})
+add_library(${TCPLIB} STATIC ${src})

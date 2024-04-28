@@ -15,9 +15,13 @@ namespace rpc
         FdEvent(int fd);
         FdEvent();
         ~FdEvent();
+        // 设置文件描述符的非阻塞模式
+        void setNonBlock();
         void setListenCallBack(TriggerEvent event_type, std::function<void()> callback);
         // 获得对应的回调函数
         std::function<void()> getCallBackFunc(TriggerEvent event_type);
+        // 取消当前文件描述符的读or写属性
+        void cancle(TriggerEvent event_type);
         inline int getFd()
         {
             return m_fd;
@@ -36,4 +40,4 @@ namespace rpc
     };
 
 }
-// 47-39
+// 52

@@ -22,6 +22,7 @@
     }                                                                                        \
     m_listen_fds.insert(event->getFd());                                                     \
     DEBUGLOG("add event to set_listen_fd success fd[%d]", event->getFd())
+// epoll 实例中删除指定的文件描述符
 #define DELETE_TO_EPOLL()                                                                         \
     auto it = m_listen_fds.find(event->getFd());                                                  \
     if (it != m_listen_fds.end())                                                                 \
@@ -40,7 +41,7 @@ namespace rpc
     // 问题 ：call_once 单例模式
     static thread_local Eventloop *t_current_eventloop = nullptr;
     static int g_epoll_max_timeout = 10000;
-    static int g_epoll_max_events = 30;
+    static int g_epoll_max_events = 10;
     Eventloop::Eventloop()
     {
         if (t_current_eventloop != NULL)
@@ -63,6 +64,29 @@ namespace rpc
         INFOLOG("succ create event loop in thread %d", m_thread_id);
         t_current_eventloop = this;
     }
+    Eventloop::~Eventloop()
+    {
+        close(m_epoll_fd);
+        if (m_wakeup_fd_event)
+        {
+            delete m_wakeup_fd_event;
+            m_wakeup_fd_event = nullptr;
+        }
+        if (m_timer)
+        {
+            delete m_timer;
+            m_timer = nullptr;
+        }
+    }
+    void Eventloop::initTimer()
+    {
+        m_timer = new Timer();
+        addEpollEvent(m_timer);
+    }
+    void Eventloop::addTimerEvent(TimerEvent::s_ptr event)
+    {
+        m_timer->addTimeEvent(event);
+    }
     void Eventloop::initWakeUpFdEvent()
     {
         m_wakeup_fd = eventfd(0, EFD_NONBLOCK);
@@ -79,25 +103,6 @@ namespace rpc
             while(read(m_wakeup_fd,buf,8)!=-1&&errno!=EAGAIN){}
                DEBUGLOG("read full bytes from wakeup fd[%d]",m_wakeup_fd); });
         addEpollEvent(m_wakeup_fd_event);
-    }
-    void Eventloop::initTimer()
-    {
-        m_timer = new Timer();
-        addEpollEvent(m_timer);
-    }
-    Eventloop::~Eventloop()
-    {
-        close(m_epoll_fd);
-        if (m_wakeup_fd_event)
-        {
-            delete m_wakeup_fd_event;
-            m_wakeup_fd_event = nullptr;
-        }
-        if (m_timer)
-        {
-            delete m_timer;
-            m_timer = nullptr;
-        }
     }
     void Eventloop::run()
     {
@@ -158,6 +163,10 @@ namespace rpc
     {
         m_stop_flag = true;
     }
+    void Eventloop::dealWakeUp()
+    {
+    }
+
     void Eventloop::addEpollEvent(FdEvent *event)
     {
         if (isInLoopThread())
@@ -175,6 +184,7 @@ namespace rpc
             addTask(cb, true);
         }
     }
+    // 从epoll树上删除当前的事件
     void Eventloop::deleteEpollEvent(FdEvent *event)
     {
         if (isInLoopThread())
@@ -191,10 +201,6 @@ namespace rpc
             addTask(cb, true);
         }
     }
-    bool Eventloop::isInLoopThread()
-    {
-        return getThreadId() == m_thread_id;
-    }
     void Eventloop::addTask(std::function<void()> callback, bool is_wake_up)
     {
         {
@@ -204,13 +210,19 @@ namespace rpc
         if (is_wake_up)
             wakeup();
     }
-    void Eventloop::addTimerEvent(TimerEvent::s_ptr event)
+    bool Eventloop::isInLoopThread()
     {
-        m_timer->addTimeEvent(event);
+        return getThreadId() == m_thread_id;
     }
-    void Eventloop::dealWakeUp()
+
+    Eventloop *Eventloop::GetCurrentEventloop()
     {
+        if (t_current_eventloop == nullptr)
+        {
+            t_current_eventloop = new Eventloop();
+        }
+        return t_current_eventloop;
     }
 
 }
-// -194
+// 225

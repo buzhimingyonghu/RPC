@@ -17,7 +17,7 @@ int main()
 {
 
     int *temp = (int *)malloc(sizeof(int) * 1);
-    rpc::Config::SetGlobalConfig("../conf/rocket.xml");
+    rpc::Config::SetGlobalConfig("../conf/rpc.xml");
 
     rpc::Logger::InitGlobalLogger();
 

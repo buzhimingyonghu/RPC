@@ -33,6 +33,9 @@ namespace rpc
 
         void addTimerEvent(TimerEvent::s_ptr event);
 
+    public:
+        static Eventloop *GetCurrentEventloop();
+
     private:
         void initWakeUpFdEvent();
 
@@ -52,4 +55,4 @@ namespace rpc
         Timer *m_timer{nullptr};
     };
 }
-// 62-49
+// 71
