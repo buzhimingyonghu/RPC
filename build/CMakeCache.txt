@@ -228,6 +228,15 @@ net_IS_TOP_LEVEL:STATIC=OFF
 net_SOURCE_DIR:STATIC=/home/nlove/temp/RPC/rpc/net
 
 //Value Computed by CMake
+tcp_BINARY_DIR:STATIC=/home/nlove/temp/RPC/build/rpc/tcp
+
+//Value Computed by CMake
+tcp_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+tcp_SOURCE_DIR:STATIC=/home/nlove/temp/RPC/rpc/tcp
+
+//Value Computed by CMake
 test_BINARY_DIR:STATIC=/home/nlove/temp/RPC/build/testcases
 
 //Value Computed by CMake
@@ -341,7 +350,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

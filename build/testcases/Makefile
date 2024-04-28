@@ -117,42 +117,80 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-testcases/CMakeFiles/test_eventloop.dir/rule:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_eventloop.dir/rule
-.PHONY : testcases/CMakeFiles/test_eventloop.dir/rule
+testcases/CMakeFiles/test_tcp.dir/rule:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_tcp.dir/rule
+.PHONY : testcases/CMakeFiles/test_tcp.dir/rule
 
 # Convenience name for target.
-test_eventloop: testcases/CMakeFiles/test_eventloop.dir/rule
-.PHONY : test_eventloop
+test_tcp: testcases/CMakeFiles/test_tcp.dir/rule
+.PHONY : test_tcp
 
 # fast build rule for target.
-test_eventloop/fast:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_eventloop.dir/build.make testcases/CMakeFiles/test_eventloop.dir/build
-.PHONY : test_eventloop/fast
+test_tcp/fast:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/build
+.PHONY : test_tcp/fast
 
-test_eventloop.o: test_eventloop.cpp.o
-.PHONY : test_eventloop.o
+# Convenience name for target.
+testcases/CMakeFiles/test_client.dir/rule:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_client.dir/rule
+.PHONY : testcases/CMakeFiles/test_client.dir/rule
+
+# Convenience name for target.
+test_client: testcases/CMakeFiles/test_client.dir/rule
+.PHONY : test_client
+
+# fast build rule for target.
+test_client/fast:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/build
+.PHONY : test_client/fast
+
+test_client.o: test_client.cpp.o
+.PHONY : test_client.o
 
 # target to build an object file
-test_eventloop.cpp.o:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_eventloop.dir/build.make testcases/CMakeFiles/test_eventloop.dir/test_eventloop.cpp.o
-.PHONY : test_eventloop.cpp.o
+test_client.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.o
+.PHONY : test_client.cpp.o
 
-test_eventloop.i: test_eventloop.cpp.i
-.PHONY : test_eventloop.i
+test_client.i: test_client.cpp.i
+.PHONY : test_client.i
 
 # target to preprocess a source file
-test_eventloop.cpp.i:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_eventloop.dir/build.make testcases/CMakeFiles/test_eventloop.dir/test_eventloop.cpp.i
-.PHONY : test_eventloop.cpp.i
+test_client.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.i
+.PHONY : test_client.cpp.i
 
-test_eventloop.s: test_eventloop.cpp.s
-.PHONY : test_eventloop.s
+test_client.s: test_client.cpp.s
+.PHONY : test_client.s
 
 # target to generate assembly for a file
-test_eventloop.cpp.s:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_eventloop.dir/build.make testcases/CMakeFiles/test_eventloop.dir/test_eventloop.cpp.s
-.PHONY : test_eventloop.cpp.s
+test_client.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.s
+.PHONY : test_client.cpp.s
+
+test_tcp.o: test_tcp.cpp.o
+.PHONY : test_tcp.o
+
+# target to build an object file
+test_tcp.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.o
+.PHONY : test_tcp.cpp.o
+
+test_tcp.i: test_tcp.cpp.i
+.PHONY : test_tcp.i
+
+# target to preprocess a source file
+test_tcp.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.i
+.PHONY : test_tcp.cpp.i
+
+test_tcp.s: test_tcp.cpp.s
+.PHONY : test_tcp.s
+
+# target to generate assembly for a file
+test_tcp.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.s
+.PHONY : test_tcp.cpp.s
 
 # Help Target
 help:
@@ -162,10 +200,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_eventloop"
-	@echo "... test_eventloop.o"
-	@echo "... test_eventloop.i"
-	@echo "... test_eventloop.s"
+	@echo "... test_client"
+	@echo "... test_tcp"
+	@echo "... test_client.o"
+	@echo "... test_client.i"
+	@echo "... test_client.s"
+	@echo "... test_tcp.o"
+	@echo "... test_tcp.i"
+	@echo "... test_tcp.s"
 .PHONY : help
 
 

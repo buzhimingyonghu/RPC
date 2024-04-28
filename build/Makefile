@@ -130,17 +130,30 @@ common/fast:
 .PHONY : common/fast
 
 #=============================================================================
-# Target rules for targets named test_eventloop
+# Target rules for targets named test_tcp
 
 # Build rule for target.
-test_eventloop: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_eventloop
-.PHONY : test_eventloop
+test_tcp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcp
+.PHONY : test_tcp
 
 # fast build rule for target.
-test_eventloop/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_eventloop.dir/build.make testcases/CMakeFiles/test_eventloop.dir/build
-.PHONY : test_eventloop/fast
+test_tcp/fast:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/build
+.PHONY : test_tcp/fast
+
+#=============================================================================
+# Target rules for targets named test_client
+
+# Build rule for target.
+test_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_client
+.PHONY : test_client
+
+# fast build rule for target.
+test_client/fast:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/build
+.PHONY : test_client/fast
 
 #=============================================================================
 # Target rules for targets named net
@@ -155,6 +168,19 @@ net/fast:
 	$(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/build
 .PHONY : net/fast
 
+#=============================================================================
+# Target rules for targets named tcp
+
+# Build rule for target.
+tcp: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tcp
+.PHONY : tcp
+
+# fast build rule for target.
+tcp/fast:
+	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/build
+.PHONY : tcp/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,7 +191,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... common"
 	@echo "... net"
-	@echo "... test_eventloop"
+	@echo "... tcp"
+	@echo "... test_client"
+	@echo "... test_tcp"
 .PHONY : help
 
 

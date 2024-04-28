@@ -97,10 +97,24 @@ rpc/net/CMakeFiles/net.dir/fd_event.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net.dir/fd_event.cpp.s"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/net/fd_event.cpp -o CMakeFiles/net.dir/fd_event.cpp.s
 
+rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
+rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o: ../rpc/net/fd_event_group.cpp
+rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o"
+	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o -MF CMakeFiles/net.dir/fd_event_group.cpp.o.d -o CMakeFiles/net.dir/fd_event_group.cpp.o -c /home/nlove/temp/RPC/rpc/net/fd_event_group.cpp
+
+rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net.dir/fd_event_group.cpp.i"
+	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nlove/temp/RPC/rpc/net/fd_event_group.cpp > CMakeFiles/net.dir/fd_event_group.cpp.i
+
+rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net.dir/fd_event_group.cpp.s"
+	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/net/fd_event_group.cpp -o CMakeFiles/net.dir/fd_event_group.cpp.s
+
 rpc/net/CMakeFiles/net.dir/io_thread.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
 rpc/net/CMakeFiles/net.dir/io_thread.cpp.o: ../rpc/net/io_thread.cpp
 rpc/net/CMakeFiles/net.dir/io_thread.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object rpc/net/CMakeFiles/net.dir/io_thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object rpc/net/CMakeFiles/net.dir/io_thread.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/io_thread.cpp.o -MF CMakeFiles/net.dir/io_thread.cpp.o.d -o CMakeFiles/net.dir/io_thread.cpp.o -c /home/nlove/temp/RPC/rpc/net/io_thread.cpp
 
 rpc/net/CMakeFiles/net.dir/io_thread.cpp.i: cmake_force
@@ -114,7 +128,7 @@ rpc/net/CMakeFiles/net.dir/io_thread.cpp.s: cmake_force
 rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
 rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o: ../rpc/net/io_thread_pool.cpp
 rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o -MF CMakeFiles/net.dir/io_thread_pool.cpp.o.d -o CMakeFiles/net.dir/io_thread_pool.cpp.o -c /home/nlove/temp/RPC/rpc/net/io_thread_pool.cpp
 
 rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.i: cmake_force
@@ -128,7 +142,7 @@ rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.s: cmake_force
 rpc/net/CMakeFiles/net.dir/time_event.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
 rpc/net/CMakeFiles/net.dir/time_event.cpp.o: ../rpc/net/time_event.cpp
 rpc/net/CMakeFiles/net.dir/time_event.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object rpc/net/CMakeFiles/net.dir/time_event.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object rpc/net/CMakeFiles/net.dir/time_event.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/time_event.cpp.o -MF CMakeFiles/net.dir/time_event.cpp.o.d -o CMakeFiles/net.dir/time_event.cpp.o -c /home/nlove/temp/RPC/rpc/net/time_event.cpp
 
 rpc/net/CMakeFiles/net.dir/time_event.cpp.i: cmake_force
@@ -142,7 +156,7 @@ rpc/net/CMakeFiles/net.dir/time_event.cpp.s: cmake_force
 rpc/net/CMakeFiles/net.dir/timer.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
 rpc/net/CMakeFiles/net.dir/timer.cpp.o: ../rpc/net/timer.cpp
 rpc/net/CMakeFiles/net.dir/timer.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object rpc/net/CMakeFiles/net.dir/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object rpc/net/CMakeFiles/net.dir/timer.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/timer.cpp.o -MF CMakeFiles/net.dir/timer.cpp.o.d -o CMakeFiles/net.dir/timer.cpp.o -c /home/nlove/temp/RPC/rpc/net/timer.cpp
 
 rpc/net/CMakeFiles/net.dir/timer.cpp.i: cmake_force
@@ -156,7 +170,7 @@ rpc/net/CMakeFiles/net.dir/timer.cpp.s: cmake_force
 rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o: rpc/net/CMakeFiles/net.dir/flags.make
 rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o: ../rpc/net/wakeup_fd_event.cpp
 rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o: rpc/net/CMakeFiles/net.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/net && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o -MF CMakeFiles/net.dir/wakeup_fd_event.cpp.o.d -o CMakeFiles/net.dir/wakeup_fd_event.cpp.o -c /home/nlove/temp/RPC/rpc/net/wakeup_fd_event.cpp
 
 rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.i: cmake_force
@@ -171,6 +185,7 @@ rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.s: cmake_force
 net_OBJECTS = \
 "CMakeFiles/net.dir/eventloop.cpp.o" \
 "CMakeFiles/net.dir/fd_event.cpp.o" \
+"CMakeFiles/net.dir/fd_event_group.cpp.o" \
 "CMakeFiles/net.dir/io_thread.cpp.o" \
 "CMakeFiles/net.dir/io_thread_pool.cpp.o" \
 "CMakeFiles/net.dir/time_event.cpp.o" \
@@ -182,6 +197,7 @@ net_EXTERNAL_OBJECTS =
 
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/eventloop.cpp.o
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/fd_event.cpp.o
+../lib/libnet.a: rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/io_thread.cpp.o
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/io_thread_pool.cpp.o
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/time_event.cpp.o
@@ -189,7 +205,7 @@ net_EXTERNAL_OBJECTS =
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/build.make
 ../lib/libnet.a: rpc/net/CMakeFiles/net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library ../../../lib/libnet.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library ../../../lib/libnet.a"
 	cd /home/nlove/temp/RPC/build/rpc/net && $(CMAKE_COMMAND) -P CMakeFiles/net.dir/cmake_clean_target.cmake
 	cd /home/nlove/temp/RPC/build/rpc/net && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/net.dir/link.txt --verbose=$(VERBOSE)
 

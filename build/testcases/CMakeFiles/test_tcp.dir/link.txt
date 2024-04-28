@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test_tcp.dir/test_tcp.cpp.o -o ../../bin/test_tcp   -L/home/nlove/temp/RPC/lib  -Wl,-rpath,/home/nlove/temp/RPC/lib ../../lib/libcommon.a ../../lib/libnet.a ../../lib/libtcp.a ../../lib/libnet.a ../../lib/libcommon.a -ltinyxml 

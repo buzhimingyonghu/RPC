@@ -178,6 +178,30 @@ fd_event.cpp.s:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event.cpp.s
 .PHONY : fd_event.cpp.s
 
+fd_event_group.o: fd_event_group.cpp.o
+.PHONY : fd_event_group.o
+
+# target to build an object file
+fd_event_group.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.o
+.PHONY : fd_event_group.cpp.o
+
+fd_event_group.i: fd_event_group.cpp.i
+.PHONY : fd_event_group.i
+
+# target to preprocess a source file
+fd_event_group.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.i
+.PHONY : fd_event_group.cpp.i
+
+fd_event_group.s: fd_event_group.cpp.s
+.PHONY : fd_event_group.s
+
+# target to generate assembly for a file
+fd_event_group.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/fd_event_group.cpp.s
+.PHONY : fd_event_group.cpp.s
+
 io_thread.o: io_thread.cpp.o
 .PHONY : io_thread.o
 
@@ -313,6 +337,9 @@ help:
 	@echo "... fd_event.o"
 	@echo "... fd_event.i"
 	@echo "... fd_event.s"
+	@echo "... fd_event_group.o"
+	@echo "... fd_event_group.i"
+	@echo "... fd_event_group.s"
 	@echo "... io_thread.o"
 	@echo "... io_thread.i"
 	@echo "... io_thread.s"

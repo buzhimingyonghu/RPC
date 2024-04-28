@@ -1,1 +1,0 @@
-/usr/bin/c++ CMakeFiles/test_eventloop.dir/test_eventloop.cpp.o -o ../../bin/test_eventloop   -L/home/nlove/temp/RPC/lib  -Wl,-rpath,/home/nlove/temp/RPC/lib ../../lib/libcommon.a ../../lib/libnet.a ../../lib/libcommon.a -ltinyxml 
