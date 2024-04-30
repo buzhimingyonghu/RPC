@@ -111,10 +111,24 @@ rpc/tcp/CMakeFiles/tcp.dir/tcp_buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp.dir/tcp_buffer.cpp.s"
 	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/tcp/tcp_buffer.cpp -o CMakeFiles/tcp.dir/tcp_buffer.cpp.s
 
+rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/flags.make
+rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o: ../rpc/tcp/tcp_client.cpp
+rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o"
+	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o -MF CMakeFiles/tcp.dir/tcp_client.cpp.o.d -o CMakeFiles/tcp.dir/tcp_client.cpp.o -c /home/nlove/temp/RPC/rpc/tcp/tcp_client.cpp
+
+rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tcp.dir/tcp_client.cpp.i"
+	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nlove/temp/RPC/rpc/tcp/tcp_client.cpp > CMakeFiles/tcp.dir/tcp_client.cpp.i
+
+rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tcp.dir/tcp_client.cpp.s"
+	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/tcp/tcp_client.cpp -o CMakeFiles/tcp.dir/tcp_client.cpp.s
+
 rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/flags.make
 rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o: ../rpc/tcp/tcp_connection.cpp
 rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o -MF CMakeFiles/tcp.dir/tcp_connection.cpp.o.d -o CMakeFiles/tcp.dir/tcp_connection.cpp.o -c /home/nlove/temp/RPC/rpc/tcp/tcp_connection.cpp
 
 rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.i: cmake_force
@@ -128,7 +142,7 @@ rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.s: cmake_force
 rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/flags.make
 rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o: ../rpc/tcp/tcp_server.cpp
 rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o: rpc/tcp/CMakeFiles/tcp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/tcp && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o -MF CMakeFiles/tcp.dir/tcp_server.cpp.o.d -o CMakeFiles/tcp.dir/tcp_server.cpp.o -c /home/nlove/temp/RPC/rpc/tcp/tcp_server.cpp
 
 rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.i: cmake_force
@@ -144,6 +158,7 @@ tcp_OBJECTS = \
 "CMakeFiles/tcp.dir/net_addr.cpp.o" \
 "CMakeFiles/tcp.dir/tcp_acceptor.cpp.o" \
 "CMakeFiles/tcp.dir/tcp_buffer.cpp.o" \
+"CMakeFiles/tcp.dir/tcp_client.cpp.o" \
 "CMakeFiles/tcp.dir/tcp_connection.cpp.o" \
 "CMakeFiles/tcp.dir/tcp_server.cpp.o"
 
@@ -153,11 +168,12 @@ tcp_EXTERNAL_OBJECTS =
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/net_addr.cpp.o
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/tcp_acceptor.cpp.o
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/tcp_buffer.cpp.o
+../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/tcp_server.cpp.o
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/build.make
 ../lib/libtcp.a: rpc/tcp/CMakeFiles/tcp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library ../../../lib/libtcp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX static library ../../../lib/libtcp.a"
 	cd /home/nlove/temp/RPC/build/rpc/tcp && $(CMAKE_COMMAND) -P CMakeFiles/tcp.dir/cmake_clean_target.cmake
 	cd /home/nlove/temp/RPC/build/rpc/tcp && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tcp.dir/link.txt --verbose=$(VERBOSE)
 

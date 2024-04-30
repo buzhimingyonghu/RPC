@@ -106,6 +106,8 @@ namespace rpc
     }
     void Eventloop::run()
     {
+
+        m_is_looping = true;
         while (!m_stop_flag)
         {
             std::queue<std::function<void()>> tmp_taskes;
@@ -135,6 +137,7 @@ namespace rpc
                     epoll_event trigger_event = result_events[i];
                     FdEvent *fd_event = static_cast<FdEvent *>(trigger_event.data.ptr);
                     // 在FdEvent设置回调函数的时候，会在epoll_event.daat.ptr里面把Fd_event的指针设置进去，
+
                     if (fd_event == nullptr)
                     {
                         ERRORLOG("fd_event==nullptr,continue");
@@ -149,6 +152,12 @@ namespace rpc
                     {
                         DEBUGLOG("fd %d trigger EPOLLOUT event", fd_event->getFd());
                         addTask(fd_event->getCallBackFunc(FdEvent::OUT_EVENT));
+                    }
+                    if (fd_event != nullptr && trigger_event.events != EPOLLIN && trigger_event.events != EPOLLOUT)
+                    {
+                        DEBUGLOG("fd_event=%d,trigger_event=%d", fd_event, (int)trigger_event.events);
+                        sleep(3);
+                        break;
                     }
                 }
             }

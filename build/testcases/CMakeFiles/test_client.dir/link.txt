@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/test_client.dir/test_client.cpp.o -o ../../bin/test_client   -L/home/nlove/temp/RPC/lib  -Wl,-rpath,/home/nlove/temp/RPC/lib ../../lib/libcommon.a ../../lib/libnet.a ../../lib/libtcp.a ../../lib/libnet.a ../../lib/libcommon.a -ltinyxml 
+/usr/bin/c++ CMakeFiles/test_client.dir/test_client.cpp.o -o ../../bin/test_client   -L/home/nlove/temp/RPC/lib  -Wl,-rpath,/home/nlove/temp/RPC/lib ../../lib/libcommon.a ../../lib/libnet.a ../../lib/libtcp.a ../../lib/libnet.a ../../lib/libtcp.a ../../lib/libcommon.a -ltinyxml 

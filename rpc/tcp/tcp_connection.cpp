@@ -2,26 +2,36 @@
 #include "tcp_connection.h"
 #include "fd_event_group.h"
 #include "log.h"
+#include "string_coder.h"
 namespace rpc
 {
-    TcpConnection::TcpConnection(IOThread *io_thread, int fd, int buffer_size, NetAddr::s_ptr peer_addr)
+    TcpConnection::TcpConnection(Eventloop *event_loop, int fd, int buffer_size, NetAddr::s_ptr peer_addr, TcpConnectionType type)
     {
-        m_io_thread = io_thread;
+        m_event_loop = event_loop;
         m_peer_addr = peer_addr;
-        m_state = NotConnected;
+        m_state = NotConnected,
         m_fd = fd;
+        m_connection_type = type;
 
         m_in_buffer = std::make_shared<TcpBuffer>(buffer_size);
-
         m_out_buffer = std::make_shared<TcpBuffer>(buffer_size);
-
         m_fd_event = FdEventGroup::GetFdEventGroup()->getFdEvent(fd);
         m_fd_event->setNonBlock();
-        m_fd_event->setListenCallBack(FdEvent::IN_EVENT, std::bind(&TcpConnection::onRead, this));
-        io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+        m_coder = new StringCoder();
+
+        if (m_connection_type == TcpConnectionByServer)
+        {
+            listenRead();
+        }
     }
     TcpConnection::~TcpConnection()
     {
+        DEBUGLOG("~TcpConnection");
+        if (m_coder)
+        {
+            delete m_coder;
+            m_coder = NULL;
+        }
     }
     void TcpConnection::onRead()
     {
@@ -82,30 +92,61 @@ namespace rpc
         excute();
     }
     /*
-    1. 从输入缓冲区中读取RPC请求数据。
-    2. 将读取到的RPC请求数据处理为字符串形式。
-    3. 记录日志，记录成功获取到的请求内容以及客户端地址信息。
-    4. 将处理后的RPC请求数据写入输出缓冲区。
-    5. 将写入操作注册到文件描述符（m_fd_event）对应的事件监听器中，以便在写入就绪时调用回调函数（onWrite）。
-    6. 将文件描述符的事件监听器添加到事件循环中，以便在事件发生时进行处理。
+    execute`函数的主要功能是根据连接类型执行不同操作路径，可能包括读取请求、发送响应或执行回调函数。。
     */
     void TcpConnection::excute()
     {
+
+        if (m_connection_type == TcpConnectionByServer)
+        {
+            processServerConnection();
+        }
+        else
+        {
+            processClientConnection();
+        }
+    }
+    // 从输入缓冲区中读取 RPC 请求消息
+    // 将消息写入输出缓冲区
+    // 执行写操作或者注册写事件
+    void TcpConnection::processServerConnection()
+    {
+        // 将 RPC 请求执行业务逻辑，获取 RPC 响应, 再把 RPC 响应发送回去
         // 问题，是不是多此一举
-        std::vector<char> temp;
+        std::vector<char> tmp;
         int size = m_in_buffer->readAble();
-        temp.resize(size);
-        m_in_buffer->readFromBuffer(temp, size);
+        tmp.resize(size);
+        m_in_buffer->readFromBuffer(tmp, size);
 
         std::string msg;
-        for (char &c : temp)
+        for (size_t i = 0; i < tmp.size(); ++i)
         {
-            msg += c;
+            msg += tmp[i];
         }
+
         INFOLOG("success get request[%s] from client[%s]", msg.c_str(), m_peer_addr->toString().c_str());
-        m_out_buffer->writeToBuffer(msg.c_str(), msg.size());
-        m_fd_event->setListenCallBack(FdEvent::OUT_EVENT, std::bind(&TcpConnection::onWrite, this));
-        m_io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+
+        m_out_buffer->writeToBuffer(msg.c_str(), msg.length());
+
+        listenWrite();
+    }
+    // 从输入缓冲区中解码消息
+    // 执行消息对应的回调函数
+    void TcpConnection::processClientConnection()
+    {
+        // 从 buffer 里 decode 得到 message 对象, 执行其回调
+        std::vector<AbstractProtocol::s_ptr> result;
+        m_coder->decode(result, m_in_buffer);
+
+        for (size_t i = 0; i < result.size(); ++i)
+        {
+            std::string req_id = result[i]->getReqId();
+            auto it = m_read_dones.find(req_id);
+            if (it != m_read_dones.end())
+            {
+                it->second(result[i]);
+            }
+        }
     }
     /*
     1. 检查连接状态，如果客户端已断开连接，则记录错误日志并返回。
@@ -114,14 +155,20 @@ namespace rpc
     */
     void TcpConnection::onWrite()
     {
-        // 将当前 out_buffer 里面的数据全部发送给 client
-
         if (m_state != Connected)
         {
             ERRORLOG("onWrite error, client has already disconneced, addr[%s], clientfd[%d]", m_peer_addr->toString().c_str(), m_fd);
             return;
         }
-
+        if (m_connection_type == TcpConnectionByClient)
+        {
+            std::vector<AbstractProtocol::s_ptr> messages;
+            for (size_t i = 0; i < m_write_dones.size(); i++)
+            {
+                messages.push_back(m_write_dones[i].first);
+            }
+            m_coder->encode(messages, m_out_buffer);
+        }
         bool is_write_all = false;
         while (true)
         {
@@ -149,11 +196,21 @@ namespace rpc
                 ERRORLOG("write data error, errno==EAGIN and rt == -1");
                 break;
             }
+            m_out_buffer->moveReadIndex(rt);
         }
         if (is_write_all)
         {
             m_fd_event->cancle(FdEvent::OUT_EVENT);
-            m_io_thread->getEventLoop()->addEpollEvent(m_fd_event);
+            m_event_loop->addEpollEvent(m_fd_event);
+        }
+        // 问题，为什么最后要执行一下
+        if (m_connection_type == TcpConnectionByClient)
+        {
+            for (size_t i = 0; i < m_write_dones.size(); ++i)
+            {
+                m_write_dones[i].second(m_write_dones[i].first);
+            }
+            m_write_dones.clear();
         }
     }
     void TcpConnection::clear()
@@ -165,9 +222,10 @@ namespace rpc
         }
         m_fd_event->cancle(FdEvent::IN_EVENT);
         m_fd_event->cancle(FdEvent::OUT_EVENT);
-        m_io_thread->getEventLoop()->deleteEpollEvent(m_fd_event);
+        m_event_loop->deleteEpollEvent(m_fd_event);
         m_state = Closed;
     }
+
     // 问题 不理解
     void TcpConnection::shutdown()
     {
@@ -175,8 +233,8 @@ namespace rpc
         {
             return;
         }
-
-        // 处于半关闭
+        // 问题
+        //  处于半关闭
         m_state = HalfClosing;
 
         // 调用 shutdown 关闭读写，意味着服务器不会再对这个 fd 进行读写操作了
@@ -184,5 +242,32 @@ namespace rpc
         // 当 fd 发生可读事件，但是可读的数据为0，即 对端发送了 FIN
         ::shutdown(m_fd, SHUT_RDWR);
     }
+
+    void TcpConnection::setConnectionType(TcpConnectionType type)
+    {
+        m_connection_type = type;
+    }
+    void TcpConnection::listenWrite()
+    {
+
+        m_fd_event->setListenCallBack(FdEvent::OUT_EVENT, std::bind(&TcpConnection::onWrite, this));
+        m_event_loop->addEpollEvent(m_fd_event);
+    }
+
+    void TcpConnection::listenRead()
+    {
+
+        m_fd_event->setListenCallBack(FdEvent::IN_EVENT, std::bind(&TcpConnection::onRead, this));
+        m_event_loop->addEpollEvent(m_fd_event);
+    }
+    void TcpConnection::pushSendMessage(AbstractProtocol::s_ptr message, std::function<void(AbstractProtocol::s_ptr)> done)
+    {
+        m_write_dones.push_back(std::make_pair(message, done));
+    }
+
+    void TcpConnection::pushReadMessage(const std::string &req_id, std::function<void(AbstractProtocol::s_ptr)> done)
+    {
+        m_read_dones.insert(std::make_pair(req_id, done));
+    }
 }
-// 200
+// 243

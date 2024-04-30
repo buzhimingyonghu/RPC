@@ -1,10 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 project(test)
-include_directories(
-    ${INCLUDE_PATH_COMMON}
-    ${INCLUDE_PATH_NET}
-    ${INCLUDE_PATH_TCP}
-)
+
 link_directories(${LIBPATH})
 link_libraries(
     ${COMMONLIB}

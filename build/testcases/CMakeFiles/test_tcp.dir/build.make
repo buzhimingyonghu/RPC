@@ -96,6 +96,7 @@ test_tcp_EXTERNAL_OBJECTS =
 ../bin/test_tcp: ../lib/libnet.a
 ../bin/test_tcp: ../lib/libtcp.a
 ../bin/test_tcp: ../lib/libnet.a
+../bin/test_tcp: ../lib/libtcp.a
 ../bin/test_tcp: ../lib/libcommon.a
 ../bin/test_tcp: testcases/CMakeFiles/test_tcp.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/test_tcp"

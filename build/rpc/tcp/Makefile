@@ -202,6 +202,30 @@ tcp_buffer.cpp.s:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/tcp_buffer.cpp.s
 .PHONY : tcp_buffer.cpp.s
 
+tcp_client.o: tcp_client.cpp.o
+.PHONY : tcp_client.o
+
+# target to build an object file
+tcp_client.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.o
+.PHONY : tcp_client.cpp.o
+
+tcp_client.i: tcp_client.cpp.i
+.PHONY : tcp_client.i
+
+# target to preprocess a source file
+tcp_client.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.i
+.PHONY : tcp_client.cpp.i
+
+tcp_client.s: tcp_client.cpp.s
+.PHONY : tcp_client.s
+
+# target to generate assembly for a file
+tcp_client.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/tcp_client.cpp.s
+.PHONY : tcp_client.cpp.s
+
 tcp_connection.o: tcp_connection.cpp.o
 .PHONY : tcp_connection.o
 
@@ -268,6 +292,9 @@ help:
 	@echo "... tcp_buffer.o"
 	@echo "... tcp_buffer.i"
 	@echo "... tcp_buffer.s"
+	@echo "... tcp_client.o"
+	@echo "... tcp_client.i"
+	@echo "... tcp_client.s"
 	@echo "... tcp_connection.o"
 	@echo "... tcp_connection.i"
 	@echo "... tcp_connection.s"

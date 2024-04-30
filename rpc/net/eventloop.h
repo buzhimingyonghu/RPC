@@ -32,6 +32,10 @@ namespace rpc
         void addTask(std::function<void()> callback, bool is_wake_up = false);
 
         void addTimerEvent(TimerEvent::s_ptr event);
+        inline bool getIsLooping()
+        {
+            return m_is_looping;
+        }
 
     public:
         static Eventloop *GetCurrentEventloop();
@@ -53,6 +57,8 @@ namespace rpc
         std::queue<std::function<void()>> m_pending_tasks; // 任务队列
         std::mutex m_mutex;
         Timer *m_timer{nullptr};
+
+        bool m_is_looping = false;
     };
 }
-// 71
+// 75

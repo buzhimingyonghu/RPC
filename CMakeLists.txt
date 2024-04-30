@@ -9,11 +9,17 @@ set(EXECPATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 set(COMMONLIB common)
 set(NETLIB net)
 set(TCPLIB tcp)
+
+
 #头文件地址
 set(INCLUDE_PATH_COMMON ${CMAKE_CURRENT_SOURCE_DIR}/rpc/common)
 set(INCLUDE_PATH_NET ${CMAKE_CURRENT_SOURCE_DIR}/rpc/net)
 set(INCLUDE_PATH_TCP ${CMAKE_CURRENT_SOURCE_DIR}/rpc/tcp)
-
+include_directories(
+    ${INCLUDE_PATH_COMMON}
+    ${INCLUDE_PATH_NET}
+    ${INCLUDE_PATH_TCP}
+)
 
 add_subdirectory(rpc/common)
 add_subdirectory(testcases)

@@ -284,10 +284,14 @@ testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.o: ../testcases/test_tcp.cpp \
   /usr/include/semaphore.h \
   /usr/include/x86_64-linux-gnu/bits/semaphore.h \
   ../rpc/tcp/tcp_connection.h \
+  ../rpc/net/abstract_coder.h \
+  ../rpc/net/abstract_protocol.h \
   ../rpc/tcp/tcp_buffer.h
 
 
 ../rpc/tcp/tcp_buffer.h:
+
+../rpc/net/abstract_protocol.h:
 
 /usr/include/c++/11/bits/stl_multimap.h:
 
@@ -784,6 +788,8 @@ testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.o: ../testcases/test_tcp.cpp \
 /usr/include/c++/11/bits/exception.h:
 
 /usr/include/c++/11/bits/locale_facets.h:
+
+../rpc/net/abstract_coder.h:
 
 /usr/include/semaphore.h:
 

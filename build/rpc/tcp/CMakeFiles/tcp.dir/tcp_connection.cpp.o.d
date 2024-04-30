@@ -212,6 +212,8 @@ rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o: \
  /usr/include/c++/11/bits/stl_multimap.h \
  /home/nlove/temp/RPC/rpc/net/time_event.h \
  /home/nlove/temp/RPC/rpc/net/wakeup_fd_event.h \
+ /home/nlove/temp/RPC/rpc/net/abstract_coder.h \
+ /home/nlove/temp/RPC/rpc/net/abstract_protocol.h \
  /home/nlove/temp/RPC/rpc/tcp/tcp_buffer.h \
  /home/nlove/temp/RPC/rpc/net/fd_event_group.h \
  /home/nlove/temp/RPC/rpc/common/log.h /usr/include/c++/11/iostream \
@@ -230,4 +232,5 @@ rpc/tcp/CMakeFiles/tcp.dir/tcp_connection.cpp.o: \
  /usr/include/c++/11/bits/basic_ios.tcc \
  /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc \
- /home/nlove/temp/RPC/rpc/common/config.h
+ /home/nlove/temp/RPC/rpc/common/config.h \
+ /home/nlove/temp/RPC/rpc/net/string_coder.h

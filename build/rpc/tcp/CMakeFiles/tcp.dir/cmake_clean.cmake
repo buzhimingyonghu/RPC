@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tcp.dir/tcp_acceptor.cpp.o.d"
   "CMakeFiles/tcp.dir/tcp_buffer.cpp.o"
   "CMakeFiles/tcp.dir/tcp_buffer.cpp.o.d"
+  "CMakeFiles/tcp.dir/tcp_client.cpp.o"
+  "CMakeFiles/tcp.dir/tcp_client.cpp.o.d"
   "CMakeFiles/tcp.dir/tcp_connection.cpp.o"
   "CMakeFiles/tcp.dir/tcp_connection.cpp.o.d"
   "CMakeFiles/tcp.dir/tcp_server.cpp.o"
