@@ -62,6 +62,18 @@ namespace rpc
         // 获取当前对象的智能指针：使用shared_from_this()获取当前对象的智能指针，以确保在回调中对象的生命周期得到管理
         // 问题
         s_ptr channel = shared_from_this();
+
+        m_timer_event = std::make_shared<TimerEvent>(
+            my_controller->GetTimeout(), false, [my_controller, channel]() mutable
+            {
+            my_controller->StartCancel();
+            my_controller->SetError(ERROR_RPC_CALL_TIMEOUT, "rpc call timeout " + std::to_string(my_controller->GetTimeout()));
+            if (channel->getClosure())
+            {
+            channel->getClosure()->Run();
+            }
+            channel.reset(); });
+        m_client->addTimeEvent(m_timer_event);
         // 异步连接到远程服务器
         m_client->connect([req_protocol, channel]() mutable
                           {
@@ -108,7 +120,8 @@ namespace rpc
                     INFOLOG("%s | success get rpc response, call method name[%s], peer addr[%s], local addr[%s]",
                             rsp_protocol->m_msg_id.c_str(), rsp_protocol->m_method_name.c_str(),
                             channel->getTcpClient()->getPeerAddr()->toString().c_str(), channel->getTcpClient()->getLocalAddr()->toString().c_str());
-
+                        // 当成功读取到回包后， 取消定时任务
+                    channel->getTimeEvent()->setCancled(true);
                     // 反序列化
                     if (!(channel->getResponse()->ParseFromString(rsp_protocol->m_pb_data)))
                     {
@@ -135,10 +148,9 @@ namespace rpc
                             channel->getTcpClient()->getPeerAddr()->toString().c_str(), channel->getTcpClient()->getLocalAddr()->toString().c_str());
 
                     // 如果存在完成回调，执行它
-                    if (channel->getClosure())
-                    {
+                    if (!my_controller->IsCanceled() && channel->getClosure()) {
                         channel->getClosure()->Run();
-                    }
+                        }
                     channel.reset(); }); }); });
     }
     // 问题

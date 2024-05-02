@@ -3,10 +3,21 @@
 #include <memory>
 #include "net_addr.h"
 #include "tcp_client.h"
-
+#include "time_event.h"
 namespace rpc
 {
+#define NEWMESSAGE(type, var_name) \
+    std::shared_ptr<type> var_name = std::make_shared<type>();
 
+#define NEWRPCCONTROLLER(var_name) \
+    std::shared_ptr<rpc::RpcController> var_name = std::make_shared<rpc::RpcController>();
+#define NEWRPCCHANNEL(addr, var_name) \
+    std::shared_ptr<rpc::RpcChannel> var_name = std::make_shared<rpc::RpcChannel>(std::make_shared<rpc::IPNetAddr>(addr));
+#define CALLRPRC(channel, method_name, controller, request, response, closure)                                 \
+    {                                                                                                          \
+        channel->Init(controller, request, response, closure);                                                 \
+        Order_Stub(channel.get()).method_name(controller.get(), request.get(), response.get(), closure.get()); \
+    }                                                                                                          \
     // RpcChannel 类继承自 google::protobuf::RpcChannel, 提供 RPC 通信的功能。
     class RpcChannel : public google::protobuf::RpcChannel, public std::enable_shared_from_this<RpcChannel>
     {
@@ -62,6 +73,10 @@ namespace rpc
         {
             return m_client.get();
         }
+        inline TimerEvent::s_ptr getTimeEvent()
+        {
+            return m_timer_event;
+        }
 
     private:
         // 远程地址的智能指针。
@@ -83,6 +98,8 @@ namespace rpc
 
         // TcpClient 的智能指针，用于建立和管理 TCP 连接。
         TcpClient::s_ptr m_client{nullptr};
+
+        TimerEvent::s_ptr m_timer_event = nullptr;
     };
 
 } // namespace rpc

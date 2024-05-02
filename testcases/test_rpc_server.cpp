@@ -24,7 +24,9 @@ public:
                    ::makeOrderResponse *response,
                    ::google::protobuf::Closure *done)
     {
-
+        DEBUGLOG("start 3");
+        sleep(3);
+        DEBUGLOG("end 3");
         if (request->price() < 10)
         {
             response->set_ret_code(-1);

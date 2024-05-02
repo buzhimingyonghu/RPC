@@ -5,6 +5,7 @@
 #include "eventloop.h"
 #include "fd_event.h"
 #include "tcp_connection.h"
+#include "time_event.h"
 namespace rpc
 {
 
@@ -57,6 +58,11 @@ namespace rpc
         }
 
         void initLocalAddr();
+
+        inline void addTimeEvent(TimerEvent::s_ptr timer_event)
+        {
+            m_event_loop->addTimerEvent(timer_event);
+        }
 
     private:
         NetAddr::s_ptr m_peer_addr;
