@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/common.dir/config.cpp.o.d"
   "CMakeFiles/common.dir/log.cpp.o"
   "CMakeFiles/common.dir/log.cpp.o.d"
+  "CMakeFiles/common.dir/msg_id_util.cpp.o"
+  "CMakeFiles/common.dir/msg_id_util.cpp.o.d"
   "CMakeFiles/common.dir/util.cpp.o"
   "CMakeFiles/common.dir/util.cpp.o.d"
 )

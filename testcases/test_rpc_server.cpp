@@ -38,7 +38,7 @@ public:
 void test_tcp_server()
 {
 
-    rpc::IPNetAddr::s_ptr addr = std::make_shared<rpc::IPNetAddr>("127.0.0.1", 12346);
+    rpc::IPNetAddr::s_ptr addr = std::make_shared<rpc::IPNetAddr>("127.0.0.1", 12345);
 
     DEBUGLOG("create addr %s", addr->toString().c_str());
 

@@ -310,4 +310,7 @@ testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.o: \
  /usr/include/c++/11/cassert /usr/local/include/google/protobuf/service.h \
  /home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.h \
  /home/nlove/temp/RPC/rpc/coder/tinypb_protocol.h \
- /home/nlove/temp/RPC/rpc/tcp/tcp_client.h
+ /home/nlove/temp/RPC/rpc/tcp/tcp_client.h \
+ /home/nlove/temp/RPC/rpc/rpc/rpc_channel.h \
+ /home/nlove/temp/RPC/rpc/rpc/rpc_controller.h \
+ /home/nlove/temp/RPC/rpc/rpc/rpc_closure.h

@@ -16,55 +16,46 @@
 #include "order.pb.h"
 #include "rpc_dispatcher.h"
 #include "tcp_client.h"
+#include "rpc_channel.h"
+#include "rpc_controller.h"
+#include "rpc_closure.h"
 void test_tcp_client()
 {
+  rpc::IPNetAddr::s_ptr addr = std::make_shared<rpc::IPNetAddr>("127.0.0.1", 12345);
+  std::shared_ptr<rpc::RpcChannel> channel = std::make_shared<rpc::RpcChannel>(addr);
 
-    rpc::IPNetAddr::s_ptr addr = std::make_shared<rpc::IPNetAddr>("127.0.0.1", 12346);
-    rpc::TcpClient client(addr);
-    client.connect([addr, &client]()
-                   {
-    DEBUGLOG("conenct to [%s] success", addr->toString().c_str());
-    std::shared_ptr<rpc::TinyPBProtocol> message = std::make_shared<rpc::TinyPBProtocol>();
-    message->m_req_id = "99998888";
-    message->m_pb_data = "test pb data";
+  std::shared_ptr<makeOrderRequest> request = std::make_shared<makeOrderRequest>();
+  request->set_price(100);
+  request->set_goods("apple");
 
-    makeOrderRequest request;
-    request.set_price(100);
-    request.set_goods("apple");
-    
-    if (!request.SerializeToString(&(message->m_pb_data))) {
-      ERRORLOG("serilize error");
-      return;
-    }
+  std::shared_ptr<makeOrderResponse> response = std::make_shared<makeOrderResponse>();
 
-    message->m_method_name = "Order.makeOrder";
+  std::shared_ptr<rpc::RpcController> controller = std::make_shared<rpc::RpcController>();
+  controller->SetMsgId("99998888");
 
-    client.writeMessage(message, [request](rpc::AbstractProtocol::s_ptr msg_ptr) {
-      DEBUGLOG("send message success, request[%s]", request.ShortDebugString().c_str());
-    });
+  std::shared_ptr<rpc::RpcClosure> closure = std::make_shared<rpc::RpcClosure>([request, response, channel]() mutable
+                                                                               {
+    INFOLOG("call rpc success, request[%s], response[%s]", request->ShortDebugString().c_str(), response->ShortDebugString().c_str());
+    INFOLOG("now exit eventloop");
+    channel->getTcpClient()->stop();
+    channel.reset(); });
 
+  channel->Init(controller, request, response, closure);
 
-    client.readMessage("99998888", [](rpc::AbstractProtocol::s_ptr msg_ptr) {
-      std::shared_ptr<rpc::TinyPBProtocol> message = std::dynamic_pointer_cast<rpc::TinyPBProtocol>(msg_ptr);
-      DEBUGLOG("req_id[%s], get response %s", message->m_req_id.c_str(), message->m_pb_data.c_str());
-      makeOrderResponse response;
+  Order_Stub stub(channel.get());
 
-      if(!response.ParseFromString(message->m_pb_data)) {
-        ERRORLOG("deserialize error");
-        return;
-      }
-      DEBUGLOG("get response success, response[%s]", response.ShortDebugString().c_str());
-    }); });
+  stub.makeOrder(controller.get(), request.get(), response.get(), closure.get());
 }
 
 int main()
 {
 
-    rpc::Config::SetGlobalConfig("../conf/rpc.xml");
+  rpc::Config::SetGlobalConfig("../conf/rpc.xml");
 
-    rpc::Logger::InitGlobalLogger();
+  rpc::Logger::InitGlobalLogger();
 
-    test_tcp_client();
+  test_tcp_client();
+  INFOLOG("test_rpc_channel end");
 
-    return 0;
+  return 0;
 }

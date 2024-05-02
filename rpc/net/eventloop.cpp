@@ -6,12 +6,14 @@
 #include "log.h"
 #include "../common/util.h"
 #include "wakeup_fd_event.h"
+#include <fcntl.h>
 #define ADD_TO_EPOLL()                                                                       \
     auto it = m_listen_fds.find(event->getFd());                                             \
     int op = EPOLL_CTL_ADD;                                                                  \
     if (it != m_listen_fds.end())                                                            \
     {                                                                                        \
         op = EPOLL_CTL_MOD;                                                                  \
+        DEBUGLOG("mod fd=%d", event->getFd());                                               \
     }                                                                                        \
     epoll_event temp = event->get_Epoll_Event();                                             \
     INFOLOG("epoll_event.events=%d", (int)temp.events);                                      \
@@ -34,6 +36,7 @@
             ERRORLOG("failed epoll_ctl when add fd, errno=%d, error=%s", errno, strerror(errno)); \
         }                                                                                         \
         DEBUGLOG("delete event success, fd[%d]", event->getFd());                                 \
+        m_listen_fds.erase(it);                                                                   \
     }
 namespace rpc
 {
@@ -153,11 +156,16 @@ namespace rpc
                         DEBUGLOG("fd %d trigger EPOLLOUT event", fd_event->getFd());
                         addTask(fd_event->getCallBackFunc(FdEvent::OUT_EVENT));
                     }
-                    if (fd_event != nullptr && trigger_event.events != EPOLLIN && trigger_event.events != EPOLLOUT)
+                    if (trigger_event.events & EPOLLERR)
                     {
-                        DEBUGLOG("fd_event=%d,trigger_event=%d", fd_event, (int)trigger_event.events);
-                        sleep(3);
-                        break;
+                        DEBUGLOG("fd %d trigger EPOLLERROR event", fd_event->getFd())
+                        // 删除出错的套接字
+                        deleteEpollEvent(fd_event);
+                        if (fd_event->getCallBackFunc(FdEvent::ERROR_EVENT) != nullptr)
+                        {
+                            DEBUGLOG("fd %d add error callback", fd_event->getFd())
+                            addTask(fd_event->getCallBackFunc(FdEvent::OUT_EVENT));
+                        }
                     }
                 }
             }
@@ -171,6 +179,7 @@ namespace rpc
     void Eventloop::stop()
     {
         m_stop_flag = true;
+        wakeup();
     }
     void Eventloop::dealWakeUp()
     {
@@ -178,6 +187,11 @@ namespace rpc
 
     void Eventloop::addEpollEvent(FdEvent *event)
     {
+        int fd = event->getFd(); // 你的文件描述符
+        if (fcntl(fd, F_GETFL) == -1 && errno == EBADF)
+        {
+            DEBUGLOG("shut fd=%d", fd);
+        }
         if (isInLoopThread())
         {
             ADD_TO_EPOLL();

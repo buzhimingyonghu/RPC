@@ -27,7 +27,7 @@ namespace rpc
         fcntl(m_fd, F_SETFL, flag | O_NONBLOCK);
     }
 
-    void FdEvent::setListenCallBack(TriggerEvent event_type, std::function<void()> callback)
+    void FdEvent::setListenCallBack(TriggerEvent event_type, std::function<void()> callback, std::function<void()> error_callback)
     {
 
         if (event_type == TriggerEvent::IN_EVENT)
@@ -39,6 +39,14 @@ namespace rpc
         {
             m_listen_events.events |= EPOLLOUT;
             m_write_callback = callback;
+        }
+        if (m_error_callback == nullptr)
+        {
+            m_error_callback = error_callback;
+        }
+        else
+        {
+            m_error_callback = nullptr;
         }
         // 问题
         m_listen_events.data.ptr = this;
@@ -53,6 +61,10 @@ namespace rpc
         else if (event_type == TriggerEvent::OUT_EVENT)
         {
             return m_write_callback;
+        }
+        else if (event_type == TriggerEvent::ERROR_EVENT)
+        {
+            return m_error_callback;
         }
         return nullptr;
     }

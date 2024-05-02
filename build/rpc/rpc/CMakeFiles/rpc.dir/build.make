@@ -69,10 +69,24 @@ include rpc/rpc/CMakeFiles/rpc.dir/progress.make
 # Include the compile flags for this target's objects.
 include rpc/rpc/CMakeFiles/rpc.dir/flags.make
 
+rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/flags.make
+rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o: ../rpc/rpc/rpc_channel.cpp
+rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o"
+	cd /home/nlove/temp/RPC/build/rpc/rpc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o -MF CMakeFiles/rpc.dir/rpc_channel.cpp.o.d -o CMakeFiles/rpc.dir/rpc_channel.cpp.o -c /home/nlove/temp/RPC/rpc/rpc/rpc_channel.cpp
+
+rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rpc.dir/rpc_channel.cpp.i"
+	cd /home/nlove/temp/RPC/build/rpc/rpc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nlove/temp/RPC/rpc/rpc/rpc_channel.cpp > CMakeFiles/rpc.dir/rpc_channel.cpp.i
+
+rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rpc.dir/rpc_channel.cpp.s"
+	cd /home/nlove/temp/RPC/build/rpc/rpc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/rpc/rpc_channel.cpp -o CMakeFiles/rpc.dir/rpc_channel.cpp.s
+
 rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/flags.make
 rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o: ../rpc/rpc/rpc_controller.cpp
 rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/rpc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o -MF CMakeFiles/rpc.dir/rpc_controller.cpp.o.d -o CMakeFiles/rpc.dir/rpc_controller.cpp.o -c /home/nlove/temp/RPC/rpc/rpc/rpc_controller.cpp
 
 rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.i: cmake_force
@@ -86,7 +100,7 @@ rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.s: cmake_force
 rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/flags.make
 rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o: ../rpc/rpc/rpc_dispatcher.cpp
 rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o: rpc/rpc/CMakeFiles/rpc.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/rpc && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o -MF CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o.d -o CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o -c /home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.cpp
 
 rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.i: cmake_force
@@ -99,17 +113,19 @@ rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.s: cmake_force
 
 # Object files for target rpc
 rpc_OBJECTS = \
+"CMakeFiles/rpc.dir/rpc_channel.cpp.o" \
 "CMakeFiles/rpc.dir/rpc_controller.cpp.o" \
 "CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o"
 
 # External object files for target rpc
 rpc_EXTERNAL_OBJECTS =
 
+../lib/librpc.a: rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o
 ../lib/librpc.a: rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o
 ../lib/librpc.a: rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o
 ../lib/librpc.a: rpc/rpc/CMakeFiles/rpc.dir/build.make
 ../lib/librpc.a: rpc/rpc/CMakeFiles/rpc.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library ../../../lib/librpc.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library ../../../lib/librpc.a"
 	cd /home/nlove/temp/RPC/build/rpc/rpc && $(CMAKE_COMMAND) -P CMakeFiles/rpc.dir/cmake_clean_target.cmake
 	cd /home/nlove/temp/RPC/build/rpc/rpc && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rpc.dir/link.txt --verbose=$(VERBOSE)
 

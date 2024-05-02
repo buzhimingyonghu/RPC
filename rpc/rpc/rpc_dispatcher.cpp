@@ -33,7 +33,7 @@ namespace rpc
         std::string service_name;
         std::string method_name;
         // 问题
-        rsp_protocol->m_req_id = req_protocol->m_req_id;
+        rsp_protocol->m_msg_id = req_protocol->m_msg_id;
         rsp_protocol->m_method_name = req_protocol->m_method_name;
 
         // 解析服务名和方法名：通过调用 parseServiceFullName 函数，将 method_full_name 解析为服务名 service_name 和方法名 method_name。
@@ -47,7 +47,7 @@ namespace rpc
         auto it = m_service_map.find(service_name);
         if (it == m_service_map.end())
         {
-            ERRORLOG("%s | sericve neame[%s] not found", req_protocol->m_req_id.c_str(), service_name.c_str());
+            ERRORLOG("%s | sericve neame[%s] not found", req_protocol->m_msg_id.c_str(), service_name.c_str());
             setTinyPBError(rsp_protocol, ERROR_SERVICE_NOT_FOUND, "service not found");
             return;
         }
@@ -57,7 +57,7 @@ namespace rpc
         const google::protobuf::MethodDescriptor *method = service->GetDescriptor()->FindMethodByName(method_name);
         if (method == NULL)
         {
-            ERRORLOG("%s | method neame[%s] not found in service[%s]", req_protocol->m_req_id.c_str(), method_name.c_str(), service_name.c_str());
+            ERRORLOG("%s | method neame[%s] not found in service[%s]", req_protocol->m_msg_id.c_str(), method_name.c_str(), service_name.c_str());
             setTinyPBError(rsp_protocol, ERROR_SERVICE_NOT_FOUND, "method not found");
             return;
         }
@@ -67,7 +67,7 @@ namespace rpc
         // 反序列化，将 pb_data 反序列化为 req_msg
         if (!req_msg->ParseFromString(req_protocol->m_pb_data))
         {
-            ERRORLOG("%s | deserilize error", req_protocol->m_req_id.c_str(), method_name.c_str(), service_name.c_str());
+            ERRORLOG("%s | deserilize error", req_protocol->m_msg_id.c_str(), method_name.c_str(), service_name.c_str());
             setTinyPBError(rsp_protocol, ERROR_FAILED_DESERIALIZE, "deserilize error");
             if (req_msg != NULL)
             {
@@ -76,7 +76,7 @@ namespace rpc
             }
             return;
         }
-        INFOLOG("%s | get rpc request[%s]", req_protocol->m_req_id.c_str(), req_msg->ShortDebugString().c_str());
+        INFOLOG("%s | get rpc request[%s]", req_protocol->m_msg_id.c_str(), req_msg->ShortDebugString().c_str());
 
         // 创建响应消息：创建一个响应消息对象 rsp_msg
         google::protobuf::Message *rsp_msg = service->GetResponsePrototype(method).New();
@@ -84,13 +84,13 @@ namespace rpc
         RpcController rpcController;
         rpcController.SetLocalAddr(connection->getLocalAddr());
         rpcController.SetPeerAddr(connection->getPeerAddr());
-        rpcController.SetReqId(req_protocol->m_req_id);
+        rpcController.SetMsgId(req_protocol->m_msg_id);
         // 调用服务方法：使用 RpcController 对象，调用服务的相应方法，传入请求消息和响应消息对象。
         service->CallMethod(method, &rpcController, req_msg, rsp_msg, NULL);
         // 序列化响应消息：尝试将响应消息对象序列化为 Protocol Buffers 数据，并存储在响应协议中。
         if (!rsp_msg->SerializeToString(&(rsp_protocol->m_pb_data)))
         {
-            ERRORLOG("%s | serilize error, origin message [%s]", req_protocol->m_req_id.c_str(), rsp_msg->ShortDebugString().c_str());
+            ERRORLOG("%s | serilize error, origin message [%s]", req_protocol->m_msg_id.c_str(), rsp_msg->ShortDebugString().c_str());
             setTinyPBError(rsp_protocol, ERROR_SERVICE_NOT_FOUND, "serilize error");
             return;
 
@@ -107,7 +107,7 @@ namespace rpc
         }
 
         rsp_protocol->m_err_code = 0;
-        INFOLOG("%s | dispatch success, requesut[%s], response[%s]", req_protocol->m_req_id.c_str(), req_msg->ShortDebugString().c_str(), rsp_msg->ShortDebugString().c_str());
+        INFOLOG("%s | dispatch success, requesut[%s], response[%s]", req_protocol->m_msg_id.c_str(), req_msg->ShortDebugString().c_str(), rsp_msg->ShortDebugString().c_str());
         // 清理：最后，删除之前创建的 Protocol Buffers 消息对象，以释放资源。
         delete req_msg;
         delete rsp_msg;

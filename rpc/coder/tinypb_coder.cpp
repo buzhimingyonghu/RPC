@@ -83,19 +83,19 @@ namespace rpc
                     continue;
                 }
                 // 解析请求 ID 长度并存储到消息对象中
-                message->m_req_id_len = getInt32FromNetByte(&temp[req_id_len_index]);
-                DEBUGLOG("parse req_id_len=%d", message->m_req_id_len);
+                message->m_msg_id_len = getInt32FromNetByte(&temp[req_id_len_index]);
+                DEBUGLOG("parse req_id_len=%d", message->m_msg_id_len);
                 // 计算请求 ID 的起始索引
-                int req_id_index = req_id_len_index + sizeof(message->m_req_id_len);
+                int req_id_index = req_id_len_index + sizeof(message->m_msg_id_len);
 
                 // 创建缓冲区用于存储请求 ID
                 char req_id[100] = {0};
                 // 从消息流中复制请求 ID 数据到缓冲区中，并存储到消息对象中
-                memcpy(&req_id[0], &temp[req_id_index], message->m_req_id_len);
-                message->m_req_id = std::string(req_id);
-                DEBUGLOG("parse req_id=%s", message->m_req_id.c_str());
+                memcpy(&req_id[0], &temp[req_id_index], message->m_msg_id_len);
+                message->m_msg_id = std::string(req_id);
+                DEBUGLOG("parse req_id=%s", message->m_msg_id.c_str());
 
-                int method_name_len_index = req_id_index + message->m_req_id_len;
+                int method_name_len_index = req_id_index + message->m_msg_id_len;
                 // 如果方法名长度索引超出了消息末尾，则记录错误并继续下一轮循环
                 if (method_name_len_index >= end_index)
                 {
@@ -141,7 +141,7 @@ namespace rpc
                 memcpy(&error_info[0], &temp[err_info_index], message->m_err_info_len);
                 message->m_err_info = std::string(error_info);
                 DEBUGLOG("parse error_info=%s", message->m_err_info.c_str());
-                int pb_data_len = message->m_pk_len - message->m_method_name_len - message->m_req_id_len - message->m_err_info_len - 2 - 24;
+                int pb_data_len = message->m_pk_len - message->m_method_name_len - message->m_msg_id_len - message->m_err_info_len - 2 - 24;
 
                 // 计算 PB 数据的起始索引
                 int pd_data_index = err_info_index + message->m_err_info_len;
@@ -158,12 +158,12 @@ namespace rpc
     }
     const char *TinyPBCoder::encodeTinyPB(std::shared_ptr<TinyPBProtocol> message, int &len)
     {
-        if (message->m_req_id.empty())
+        if (message->m_msg_id.empty())
         {
-            message->m_req_id = "123456789";
+            message->m_msg_id = "123456789";
         }
-        DEBUGLOG("req_id = %s", message->m_req_id.c_str());
-        int pk_len = 2 + 24 + message->m_req_id.length() + message->m_method_name.length() + message->m_err_info.length() + message->m_pb_data.length();
+        DEBUGLOG("req_id = %s", message->m_msg_id.c_str());
+        int pk_len = 2 + 24 + message->m_msg_id.length() + message->m_method_name.length() + message->m_err_info.length() + message->m_pb_data.length();
         DEBUGLOG("pk_len = %d", pk_len);
 
         char *buf = reinterpret_cast<char *>(malloc(pk_len));
@@ -176,14 +176,14 @@ namespace rpc
         memcpy(tmp, &pk_len_net, sizeof(pk_len_net));
         tmp += sizeof(pk_len_net);
 
-        int req_id_len = message->m_req_id.length();
+        int req_id_len = message->m_msg_id.length();
         int32_t req_id_len_net = htonl(req_id_len);
         memcpy(tmp, &req_id_len_net, sizeof(req_id_len_net));
         tmp += sizeof(req_id_len_net);
 
-        if (!message->m_req_id.empty())
+        if (!message->m_msg_id.empty())
         {
-            memcpy(tmp, &(message->m_req_id[0]), req_id_len);
+            memcpy(tmp, &(message->m_msg_id[0]), req_id_len);
             tmp += req_id_len;
         }
 
@@ -226,13 +226,13 @@ namespace rpc
         *tmp = TinyPBProtocol::PB_END;
 
         message->m_pk_len = pk_len;
-        message->m_req_id_len = req_id_len;
+        message->m_msg_id_len = req_id_len;
         message->m_method_name_len = method_name_len;
         message->m_err_info_len = err_info_len;
         message->parse_success = true;
         len = pk_len;
 
-        DEBUGLOG("encode message[%s] success", message->m_req_id.c_str());
+        DEBUGLOG("encode message[%s] success", message->m_msg_id.c_str());
 
         return buf;
     }

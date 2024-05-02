@@ -268,7 +268,14 @@ rpc/net/CMakeFiles/net.dir/eventloop.cpp.o: ../rpc/net/eventloop.cpp \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h
+  /usr/include/linux/close_range.h \
+  /usr/include/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/linux/falloc.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
 
 rpc/net/CMakeFiles/net.dir/fd_event.cpp.o: ../rpc/net/fd_event.cpp \
   /usr/include/stdc-predef.h \
@@ -1952,6 +1959,8 @@ rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o: ../rpc/net/wakeup_fd_event.cpp
 
 ../rpc/net/fd_event_group.cpp:
 
+../rpc/net/fd_event.cpp:
+
 /usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
@@ -1959,8 +1968,6 @@ rpc/net/CMakeFiles/net.dir/wakeup_fd_event.cpp.o: ../rpc/net/wakeup_fd_event.cpp
 /usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/fcntl.h:
-
-../rpc/net/fd_event.cpp:
 
 /usr/include/linux/close_range.h:
 

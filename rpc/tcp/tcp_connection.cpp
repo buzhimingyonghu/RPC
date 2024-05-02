@@ -127,7 +127,7 @@ namespace rpc
         m_coder->decode(result, m_in_buffer);
         for (size_t i = 0; i < result.size(); i++)
         {
-            INFOLOG("success get request[%s] from client[%s]", result[i]->m_req_id.c_str(), m_peer_addr->toString().c_str());
+            INFOLOG("success get request[%s] from client[%s]", result[i]->m_msg_id.c_str(), m_peer_addr->toString().c_str());
             std::shared_ptr<TinyPBProtocol> message = std::make_shared<TinyPBProtocol>();
 
             RpcDispatcher::GetRpcDispatcher()->dispatch(result[i], message, this);
@@ -146,7 +146,7 @@ namespace rpc
 
         for (size_t i = 0; i < result.size(); ++i)
         {
-            std::string req_id = result[i]->m_req_id;
+            std::string req_id = result[i]->m_msg_id;
             auto it = m_read_dones.find(req_id);
             if (it != m_read_dones.end())
             {

@@ -38,7 +38,7 @@ namespace rpc
 
             std::shared_ptr<StringProtocol> msg = std::make_shared<StringProtocol>();
             msg->info = info;
-            msg->m_req_id = ("123456");
+            msg->m_msg_id = ("123456");
             out_messages.push_back(msg);
         }
     };

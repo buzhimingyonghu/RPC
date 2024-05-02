@@ -52,6 +52,7 @@ namespace rpc
         {
             m_error_code = error_code;
             m_error_info = error_info;
+            m_is_failed = true;
         }
 
         // 获取错误代码。
@@ -64,15 +65,16 @@ namespace rpc
         {
             return m_error_info;
         }
+
         // 设置请求 ID，用于标识特定的 RPC 调用。
-        inline void SetReqId(const std::string &req_id)
+        inline void SetMsgId(const std::string &req_id)
         {
-            m_req_id = req_id;
+            m_msg_id = req_id;
         }
         // 获取请求 ID。
-        inline std::string GetReqId()
+        inline std::string GetMsgId()
         {
-            return m_req_id;
+            return m_msg_id;
         }
         // 设置发起 RPC 调用的本地地址。
         inline void SetLocalAddr(NetAddr::s_ptr addr)
@@ -109,7 +111,7 @@ namespace rpc
     private:
         int32_t m_error_code{0};
         std::string m_error_info;
-        std::string m_req_id;
+        std::string m_msg_id;
 
         bool m_is_failed{false};
         bool m_is_cancled{false};

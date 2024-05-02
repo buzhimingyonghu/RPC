@@ -24,7 +24,7 @@ namespace rpc
         // PK长度
         int32_t m_pk_len{0};
         // 请求ID长度
-        int32_t m_req_id_len{0};
+        int32_t m_msg_id_len{0};
         // 请求ID，继承自父类
 
         // 方法名长度

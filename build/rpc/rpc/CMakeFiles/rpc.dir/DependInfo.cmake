@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/nlove/temp/RPC/rpc/rpc/rpc_channel.cpp" "rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o" "gcc" "rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o.d"
   "/home/nlove/temp/RPC/rpc/rpc/rpc_controller.cpp" "rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o" "gcc" "rpc/rpc/CMakeFiles/rpc.dir/rpc_controller.cpp.o.d"
   "/home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.cpp" "rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o" "gcc" "rpc/rpc/CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o.d"
   )

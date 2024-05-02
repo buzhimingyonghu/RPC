@@ -376,8 +376,15 @@ testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.o: ../testcases/tes
   /usr/local/include/google/protobuf/service.h \
   ../rpc/rpc/rpc_dispatcher.h \
   ../rpc/coder/tinypb_protocol.h \
-  ../rpc/tcp/tcp_client.h
+  ../rpc/tcp/tcp_client.h \
+  ../rpc/rpc/rpc_channel.h \
+  ../rpc/rpc/rpc_controller.h \
+  ../rpc/rpc/rpc_closure.h
 
+
+../rpc/rpc/rpc_controller.h:
+
+../rpc/rpc/rpc_channel.h:
 
 ../rpc/rpc/rpc_dispatcher.h:
 
@@ -394,6 +401,8 @@ testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.o: ../testcases/tes
 /usr/local/include/google/protobuf/inlined_string_field.h:
 
 /usr/local/include/google/protobuf/parse_context.h:
+
+../rpc/rpc/rpc_closure.h:
 
 /usr/local/include/google/protobuf/stubs/stl_util.h:
 

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "../../../lib/librpc.a"
   "../../../lib/librpc.pdb"
+  "CMakeFiles/rpc.dir/rpc_channel.cpp.o"
+  "CMakeFiles/rpc.dir/rpc_channel.cpp.o.d"
   "CMakeFiles/rpc.dir/rpc_controller.cpp.o"
   "CMakeFiles/rpc.dir/rpc_controller.cpp.o.d"
   "CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o"

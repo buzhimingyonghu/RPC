@@ -97,10 +97,24 @@ rpc/common/CMakeFiles/common.dir/log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/log.cpp.s"
 	cd /home/nlove/temp/RPC/build/rpc/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/common/log.cpp -o CMakeFiles/common.dir/log.cpp.s
 
+rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o: rpc/common/CMakeFiles/common.dir/flags.make
+rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o: ../rpc/common/msg_id_util.cpp
+rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o: rpc/common/CMakeFiles/common.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o"
+	cd /home/nlove/temp/RPC/build/rpc/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o -MF CMakeFiles/common.dir/msg_id_util.cpp.o.d -o CMakeFiles/common.dir/msg_id_util.cpp.o -c /home/nlove/temp/RPC/rpc/common/msg_id_util.cpp
+
+rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/msg_id_util.cpp.i"
+	cd /home/nlove/temp/RPC/build/rpc/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/nlove/temp/RPC/rpc/common/msg_id_util.cpp > CMakeFiles/common.dir/msg_id_util.cpp.i
+
+rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/msg_id_util.cpp.s"
+	cd /home/nlove/temp/RPC/build/rpc/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/nlove/temp/RPC/rpc/common/msg_id_util.cpp -o CMakeFiles/common.dir/msg_id_util.cpp.s
+
 rpc/common/CMakeFiles/common.dir/util.cpp.o: rpc/common/CMakeFiles/common.dir/flags.make
 rpc/common/CMakeFiles/common.dir/util.cpp.o: ../rpc/common/util.cpp
 rpc/common/CMakeFiles/common.dir/util.cpp.o: rpc/common/CMakeFiles/common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object rpc/common/CMakeFiles/common.dir/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object rpc/common/CMakeFiles/common.dir/util.cpp.o"
 	cd /home/nlove/temp/RPC/build/rpc/common && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT rpc/common/CMakeFiles/common.dir/util.cpp.o -MF CMakeFiles/common.dir/util.cpp.o.d -o CMakeFiles/common.dir/util.cpp.o -c /home/nlove/temp/RPC/rpc/common/util.cpp
 
 rpc/common/CMakeFiles/common.dir/util.cpp.i: cmake_force
@@ -115,6 +129,7 @@ rpc/common/CMakeFiles/common.dir/util.cpp.s: cmake_force
 common_OBJECTS = \
 "CMakeFiles/common.dir/config.cpp.o" \
 "CMakeFiles/common.dir/log.cpp.o" \
+"CMakeFiles/common.dir/msg_id_util.cpp.o" \
 "CMakeFiles/common.dir/util.cpp.o"
 
 # External object files for target common
@@ -122,10 +137,11 @@ common_EXTERNAL_OBJECTS =
 
 ../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/config.cpp.o
 ../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/log.cpp.o
+../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o
 ../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/util.cpp.o
 ../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/build.make
 ../lib/libcommon.a: rpc/common/CMakeFiles/common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library ../../../lib/libcommon.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library ../../../lib/libcommon.a"
 	cd /home/nlove/temp/RPC/build/rpc/common && $(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean_target.cmake
 	cd /home/nlove/temp/RPC/build/rpc/common && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common.dir/link.txt --verbose=$(VERBOSE)
 

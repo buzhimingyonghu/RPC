@@ -130,6 +130,30 @@ rpc/fast:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/build
 .PHONY : rpc/fast
 
+rpc_channel.o: rpc_channel.cpp.o
+.PHONY : rpc_channel.o
+
+# target to build an object file
+rpc_channel.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.o
+.PHONY : rpc_channel.cpp.o
+
+rpc_channel.i: rpc_channel.cpp.i
+.PHONY : rpc_channel.i
+
+# target to preprocess a source file
+rpc_channel.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.i
+.PHONY : rpc_channel.cpp.i
+
+rpc_channel.s: rpc_channel.cpp.s
+.PHONY : rpc_channel.s
+
+# target to generate assembly for a file
+rpc_channel.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/rpc_channel.cpp.s
+.PHONY : rpc_channel.cpp.s
+
 rpc_controller.o: rpc_controller.cpp.o
 .PHONY : rpc_controller.o
 
@@ -187,6 +211,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... rpc"
+	@echo "... rpc_channel.o"
+	@echo "... rpc_channel.i"
+	@echo "... rpc_channel.s"
 	@echo "... rpc_controller.o"
 	@echo "... rpc_controller.i"
 	@echo "... rpc_controller.s"

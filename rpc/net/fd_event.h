@@ -10,14 +10,15 @@ namespace rpc
         enum TriggerEvent
         {
             IN_EVENT = EPOLLIN,
-            OUT_EVENT = EPOLLOUT
+            OUT_EVENT = EPOLLOUT,
+            ERROR_EVENT = EPOLLERR,
         };
         FdEvent(int fd);
         FdEvent();
         ~FdEvent();
         // 设置文件描述符的非阻塞模式
         void setNonBlock();
-        void setListenCallBack(TriggerEvent event_type, std::function<void()> callback);
+        void setListenCallBack(TriggerEvent event_type, std::function<void()> callback, std::function<void()> error_callback = nullptr);
         // 获得对应的回调函数
         std::function<void()> getCallBackFunc(TriggerEvent event_type);
         // 取消当前文件描述符的读or写属性
@@ -37,6 +38,7 @@ namespace rpc
         epoll_event m_listen_events;
         std::function<void()> m_read_callback;
         std::function<void()> m_write_callback;
+        std::function<void()> m_error_callback{nullptr};
     };
 
 }

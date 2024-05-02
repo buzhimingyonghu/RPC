@@ -6,7 +6,7 @@ namespace rpc
     {
         m_error_code = 0;
         m_error_info = "";
-        m_req_id = "";
+        m_msg_id = "";
         m_is_failed = false;
         m_is_cancled = false;
         m_local_addr = nullptr;

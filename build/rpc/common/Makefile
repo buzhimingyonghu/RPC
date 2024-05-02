@@ -178,6 +178,30 @@ log.cpp.s:
 	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/log.cpp.s
 .PHONY : log.cpp.s
 
+msg_id_util.o: msg_id_util.cpp.o
+.PHONY : msg_id_util.o
+
+# target to build an object file
+msg_id_util.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.o
+.PHONY : msg_id_util.cpp.o
+
+msg_id_util.i: msg_id_util.cpp.i
+.PHONY : msg_id_util.i
+
+# target to preprocess a source file
+msg_id_util.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.i
+.PHONY : msg_id_util.cpp.i
+
+msg_id_util.s: msg_id_util.cpp.s
+.PHONY : msg_id_util.s
+
+# target to generate assembly for a file
+msg_id_util.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/msg_id_util.cpp.s
+.PHONY : msg_id_util.cpp.s
+
 util.o: util.cpp.o
 .PHONY : util.o
 
@@ -217,6 +241,9 @@ help:
 	@echo "... log.o"
 	@echo "... log.i"
 	@echo "... log.s"
+	@echo "... msg_id_util.o"
+	@echo "... msg_id_util.i"
+	@echo "... msg_id_util.s"
 	@echo "... util.o"
 	@echo "... util.i"
 	@echo "... util.s"
