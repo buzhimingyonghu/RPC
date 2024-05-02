@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/nlove/temp/RPC/rpc/common -I/home/nlove/temp/RPC/rpc/net -I/home/nlove/temp/RPC/rpc/tcp
+CXX_INCLUDES = -I/home/nlove/temp/RPC/rpc/common -I/home/nlove/temp/RPC/rpc/net -I/home/nlove/temp/RPC/rpc/tcp -I/home/nlove/temp/RPC/rpc/coder -I/home/nlove/temp/RPC/rpc/rpc
 
 CXX_FLAGS = 
 

@@ -3,8 +3,9 @@
 /home/nlove/temp/RPC/build/rpc/common/CMakeFiles/common.dir
 /home/nlove/temp/RPC/build/rpc/common/CMakeFiles/edit_cache.dir
 /home/nlove/temp/RPC/build/rpc/common/CMakeFiles/rebuild_cache.dir
-/home/nlove/temp/RPC/build/testcases/CMakeFiles/test_tcp.dir
-/home/nlove/temp/RPC/build/testcases/CMakeFiles/test_client.dir
+/home/nlove/temp/RPC/build/testcases/CMakeFiles/proto.dir
+/home/nlove/temp/RPC/build/testcases/CMakeFiles/test_rpc_server.dir
+/home/nlove/temp/RPC/build/testcases/CMakeFiles/test_rpc_client.dir
 /home/nlove/temp/RPC/build/testcases/CMakeFiles/edit_cache.dir
 /home/nlove/temp/RPC/build/testcases/CMakeFiles/rebuild_cache.dir
 /home/nlove/temp/RPC/build/rpc/net/CMakeFiles/net.dir
@@ -13,3 +14,9 @@
 /home/nlove/temp/RPC/build/rpc/tcp/CMakeFiles/tcp.dir
 /home/nlove/temp/RPC/build/rpc/tcp/CMakeFiles/edit_cache.dir
 /home/nlove/temp/RPC/build/rpc/tcp/CMakeFiles/rebuild_cache.dir
+/home/nlove/temp/RPC/build/rpc/coder/CMakeFiles/coder.dir
+/home/nlove/temp/RPC/build/rpc/coder/CMakeFiles/edit_cache.dir
+/home/nlove/temp/RPC/build/rpc/coder/CMakeFiles/rebuild_cache.dir
+/home/nlove/temp/RPC/build/rpc/rpc/CMakeFiles/rpc.dir
+/home/nlove/temp/RPC/build/rpc/rpc/CMakeFiles/edit_cache.dir
+/home/nlove/temp/RPC/build/rpc/rpc/CMakeFiles/rebuild_cache.dir

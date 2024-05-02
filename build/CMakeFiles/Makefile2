@@ -67,6 +67,8 @@ all: rpc/common/all
 all: testcases/all
 all: rpc/net/all
 all: rpc/tcp/all
+all: rpc/coder/all
+all: rpc/rpc/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +76,8 @@ preinstall: rpc/common/preinstall
 preinstall: testcases/preinstall
 preinstall: rpc/net/preinstall
 preinstall: rpc/tcp/preinstall
+preinstall: rpc/coder/preinstall
+preinstall: rpc/rpc/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -81,7 +85,24 @@ clean: rpc/common/clean
 clean: testcases/clean
 clean: rpc/net/clean
 clean: rpc/tcp/clean
+clean: rpc/coder/clean
+clean: rpc/rpc/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory rpc/coder
+
+# Recursive "all" directory target.
+rpc/coder/all: rpc/coder/CMakeFiles/coder.dir/all
+.PHONY : rpc/coder/all
+
+# Recursive "preinstall" directory target.
+rpc/coder/preinstall:
+.PHONY : rpc/coder/preinstall
+
+# Recursive "clean" directory target.
+rpc/coder/clean: rpc/coder/CMakeFiles/coder.dir/clean
+.PHONY : rpc/coder/clean
 
 #=============================================================================
 # Directory level rules for directory rpc/common
@@ -114,6 +135,21 @@ rpc/net/clean: rpc/net/CMakeFiles/net.dir/clean
 .PHONY : rpc/net/clean
 
 #=============================================================================
+# Directory level rules for directory rpc/rpc
+
+# Recursive "all" directory target.
+rpc/rpc/all: rpc/rpc/CMakeFiles/rpc.dir/all
+.PHONY : rpc/rpc/all
+
+# Recursive "preinstall" directory target.
+rpc/rpc/preinstall:
+.PHONY : rpc/rpc/preinstall
+
+# Recursive "clean" directory target.
+rpc/rpc/clean: rpc/rpc/CMakeFiles/rpc.dir/clean
+.PHONY : rpc/rpc/clean
+
+#=============================================================================
 # Directory level rules for directory rpc/tcp
 
 # Recursive "all" directory target.
@@ -132,8 +168,9 @@ rpc/tcp/clean: rpc/tcp/CMakeFiles/tcp.dir/clean
 # Directory level rules for directory testcases
 
 # Recursive "all" directory target.
-testcases/all: testcases/CMakeFiles/test_tcp.dir/all
-testcases/all: testcases/CMakeFiles/test_client.dir/all
+testcases/all: testcases/CMakeFiles/proto.dir/all
+testcases/all: testcases/CMakeFiles/test_rpc_server.dir/all
+testcases/all: testcases/CMakeFiles/test_rpc_client.dir/all
 .PHONY : testcases/all
 
 # Recursive "preinstall" directory target.
@@ -141,8 +178,9 @@ testcases/preinstall:
 .PHONY : testcases/preinstall
 
 # Recursive "clean" directory target.
-testcases/clean: testcases/CMakeFiles/test_tcp.dir/clean
-testcases/clean: testcases/CMakeFiles/test_client.dir/clean
+testcases/clean: testcases/CMakeFiles/proto.dir/clean
+testcases/clean: testcases/CMakeFiles/test_rpc_server.dir/clean
+testcases/clean: testcases/CMakeFiles/test_rpc_client.dir/clean
 .PHONY : testcases/clean
 
 #=============================================================================
@@ -152,7 +190,7 @@ testcases/clean: testcases/CMakeFiles/test_client.dir/clean
 rpc/common/CMakeFiles/common.dir/all:
 	$(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/depend
 	$(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=1,2,3,4 "Built target common"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=4,5,6,7 "Built target common"
 .PHONY : rpc/common/CMakeFiles/common.dir/all
 
 # Build rule for subdir invocation for target.
@@ -172,58 +210,86 @@ rpc/common/CMakeFiles/common.dir/clean:
 .PHONY : rpc/common/CMakeFiles/common.dir/clean
 
 #=============================================================================
-# Target rules for target testcases/CMakeFiles/test_tcp.dir
+# Target rules for target testcases/CMakeFiles/proto.dir
 
 # All Build rule for target.
-testcases/CMakeFiles/test_tcp.dir/all: rpc/common/CMakeFiles/common.dir/all
-testcases/CMakeFiles/test_tcp.dir/all: rpc/net/CMakeFiles/net.dir/all
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/depend
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=23,24 "Built target test_tcp"
-.PHONY : testcases/CMakeFiles/test_tcp.dir/all
+testcases/CMakeFiles/proto.dir/all:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/depend
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=17,18 "Built target proto"
+.PHONY : testcases/CMakeFiles/proto.dir/all
 
 # Build rule for subdir invocation for target.
-testcases/CMakeFiles/test_tcp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_tcp.dir/all
+testcases/CMakeFiles/proto.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/proto.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
-.PHONY : testcases/CMakeFiles/test_tcp.dir/rule
+.PHONY : testcases/CMakeFiles/proto.dir/rule
 
 # Convenience name for target.
-test_tcp: testcases/CMakeFiles/test_tcp.dir/rule
-.PHONY : test_tcp
+proto: testcases/CMakeFiles/proto.dir/rule
+.PHONY : proto
 
 # clean rule for target.
-testcases/CMakeFiles/test_tcp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/clean
-.PHONY : testcases/CMakeFiles/test_tcp.dir/clean
+testcases/CMakeFiles/proto.dir/clean:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/clean
+.PHONY : testcases/CMakeFiles/proto.dir/clean
 
 #=============================================================================
-# Target rules for target testcases/CMakeFiles/test_client.dir
+# Target rules for target testcases/CMakeFiles/test_rpc_server.dir
 
 # All Build rule for target.
-testcases/CMakeFiles/test_client.dir/all: rpc/common/CMakeFiles/common.dir/all
-testcases/CMakeFiles/test_client.dir/all: rpc/net/CMakeFiles/net.dir/all
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/depend
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=21,22 "Built target test_client"
-.PHONY : testcases/CMakeFiles/test_client.dir/all
+testcases/CMakeFiles/test_rpc_server.dir/all: rpc/common/CMakeFiles/common.dir/all
+testcases/CMakeFiles/test_rpc_server.dir/all: testcases/CMakeFiles/proto.dir/all
+testcases/CMakeFiles/test_rpc_server.dir/all: rpc/net/CMakeFiles/net.dir/all
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/depend
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=31,32 "Built target test_rpc_server"
+.PHONY : testcases/CMakeFiles/test_rpc_server.dir/all
 
 # Build rule for subdir invocation for target.
-testcases/CMakeFiles/test_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 22
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_client.dir/all
+testcases/CMakeFiles/test_rpc_server.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 30
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_rpc_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
-.PHONY : testcases/CMakeFiles/test_client.dir/rule
+.PHONY : testcases/CMakeFiles/test_rpc_server.dir/rule
 
 # Convenience name for target.
-test_client: testcases/CMakeFiles/test_client.dir/rule
-.PHONY : test_client
+test_rpc_server: testcases/CMakeFiles/test_rpc_server.dir/rule
+.PHONY : test_rpc_server
 
 # clean rule for target.
-testcases/CMakeFiles/test_client.dir/clean:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/clean
-.PHONY : testcases/CMakeFiles/test_client.dir/clean
+testcases/CMakeFiles/test_rpc_server.dir/clean:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/clean
+.PHONY : testcases/CMakeFiles/test_rpc_server.dir/clean
+
+#=============================================================================
+# Target rules for target testcases/CMakeFiles/test_rpc_client.dir
+
+# All Build rule for target.
+testcases/CMakeFiles/test_rpc_client.dir/all: rpc/common/CMakeFiles/common.dir/all
+testcases/CMakeFiles/test_rpc_client.dir/all: testcases/CMakeFiles/proto.dir/all
+testcases/CMakeFiles/test_rpc_client.dir/all: rpc/net/CMakeFiles/net.dir/all
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/depend
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=29,30 "Built target test_rpc_client"
+.PHONY : testcases/CMakeFiles/test_rpc_client.dir/all
+
+# Build rule for subdir invocation for target.
+testcases/CMakeFiles/test_rpc_client.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 30
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_rpc_client.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
+.PHONY : testcases/CMakeFiles/test_rpc_client.dir/rule
+
+# Convenience name for target.
+test_rpc_client: testcases/CMakeFiles/test_rpc_client.dir/rule
+.PHONY : test_rpc_client
+
+# clean rule for target.
+testcases/CMakeFiles/test_rpc_client.dir/clean:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/clean
+.PHONY : testcases/CMakeFiles/test_rpc_client.dir/clean
 
 #=============================================================================
 # Target rules for target rpc/net/CMakeFiles/net.dir
@@ -232,12 +298,12 @@ testcases/CMakeFiles/test_client.dir/clean:
 rpc/net/CMakeFiles/net.dir/all: rpc/tcp/CMakeFiles/tcp.dir/all
 	$(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/depend
 	$(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12,13 "Built target net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=8,9,10,11,12,13,14,15,16 "Built target net"
 .PHONY : rpc/net/CMakeFiles/net.dir/all
 
 # Build rule for subdir invocation for target.
 rpc/net/CMakeFiles/net.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 20
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 26
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc/net/CMakeFiles/net.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
 .PHONY : rpc/net/CMakeFiles/net.dir/rule
@@ -255,15 +321,15 @@ rpc/net/CMakeFiles/net.dir/clean:
 # Target rules for target rpc/tcp/CMakeFiles/tcp.dir
 
 # All Build rule for target.
-rpc/tcp/CMakeFiles/tcp.dir/all: rpc/common/CMakeFiles/common.dir/all
+rpc/tcp/CMakeFiles/tcp.dir/all: rpc/coder/CMakeFiles/coder.dir/all
 	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/depend
 	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=14,15,16,17,18,19,20 "Built target tcp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=22,23,24,25,26,27,28 "Built target tcp"
 .PHONY : rpc/tcp/CMakeFiles/tcp.dir/all
 
 # Build rule for subdir invocation for target.
 rpc/tcp/CMakeFiles/tcp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 17
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc/tcp/CMakeFiles/tcp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
 .PHONY : rpc/tcp/CMakeFiles/tcp.dir/rule
@@ -276,6 +342,58 @@ tcp: rpc/tcp/CMakeFiles/tcp.dir/rule
 rpc/tcp/CMakeFiles/tcp.dir/clean:
 	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/clean
 .PHONY : rpc/tcp/CMakeFiles/tcp.dir/clean
+
+#=============================================================================
+# Target rules for target rpc/coder/CMakeFiles/coder.dir
+
+# All Build rule for target.
+rpc/coder/CMakeFiles/coder.dir/all: rpc/rpc/CMakeFiles/rpc.dir/all
+	$(MAKE) $(MAKESILENT) -f rpc/coder/CMakeFiles/coder.dir/build.make rpc/coder/CMakeFiles/coder.dir/depend
+	$(MAKE) $(MAKESILENT) -f rpc/coder/CMakeFiles/coder.dir/build.make rpc/coder/CMakeFiles/coder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=1,2,3 "Built target coder"
+.PHONY : rpc/coder/CMakeFiles/coder.dir/all
+
+# Build rule for subdir invocation for target.
+rpc/coder/CMakeFiles/coder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 10
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc/coder/CMakeFiles/coder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
+.PHONY : rpc/coder/CMakeFiles/coder.dir/rule
+
+# Convenience name for target.
+coder: rpc/coder/CMakeFiles/coder.dir/rule
+.PHONY : coder
+
+# clean rule for target.
+rpc/coder/CMakeFiles/coder.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rpc/coder/CMakeFiles/coder.dir/build.make rpc/coder/CMakeFiles/coder.dir/clean
+.PHONY : rpc/coder/CMakeFiles/coder.dir/clean
+
+#=============================================================================
+# Target rules for target rpc/rpc/CMakeFiles/rpc.dir
+
+# All Build rule for target.
+rpc/rpc/CMakeFiles/rpc.dir/all: rpc/common/CMakeFiles/common.dir/all
+	$(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/depend
+	$(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/nlove/temp/RPC/build/CMakeFiles --progress-num=19,20,21 "Built target rpc"
+.PHONY : rpc/rpc/CMakeFiles/rpc.dir/all
+
+# Build rule for subdir invocation for target.
+rpc/rpc/CMakeFiles/rpc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 7
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc/rpc/CMakeFiles/rpc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nlove/temp/RPC/build/CMakeFiles 0
+.PHONY : rpc/rpc/CMakeFiles/rpc.dir/rule
+
+# Convenience name for target.
+rpc: rpc/rpc/CMakeFiles/rpc.dir/rule
+.PHONY : rpc
+
+# clean rule for target.
+rpc/rpc/CMakeFiles/rpc.dir/clean:
+	$(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/clean
+.PHONY : rpc/rpc/CMakeFiles/rpc.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

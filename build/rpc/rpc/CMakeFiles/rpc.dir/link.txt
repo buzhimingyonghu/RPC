@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../lib/librpc.a CMakeFiles/rpc.dir/rpc_controller.cpp.o CMakeFiles/rpc.dir/rpc_dispatcher.cpp.o
+/usr/bin/ranlib ../../../lib/librpc.a

@@ -62,6 +62,15 @@ namespace rpc
         void pushSendMessage(AbstractProtocol::s_ptr message, std::function<void(AbstractProtocol::s_ptr)> done);
 
         void pushReadMessage(const std::string &req_id, std::function<void(AbstractProtocol::s_ptr)> done);
+        inline NetAddr::s_ptr getLocalAddr()
+        {
+            return m_local_addr;
+        }
+
+        inline NetAddr::s_ptr getPeerAddr()
+        {
+            return m_peer_addr;
+        }
 
     private:
         Eventloop *m_event_loop = nullptr;
@@ -82,6 +91,7 @@ namespace rpc
         TcpConnectionType m_connection_type{TcpConnectionByServer};
 
         // std::pair<AbstractProtocol::s_ptr, std::function<void(AbstractProtocol::s_ptr)>>
+        // 将message消息存入，触发写事件后，写回调将处理所有的事件并触发，message对应的回调，一般是日志信息
         std::vector<std::pair<AbstractProtocol::s_ptr, std::function<void(AbstractProtocol::s_ptr)>>> m_write_dones;
 
         // key 为 req_id

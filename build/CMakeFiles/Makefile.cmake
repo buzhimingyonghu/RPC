@@ -11,8 +11,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.22.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.22.1/CMakeSystem.cmake"
+  "../rpc/coder/CMakeLists.txt"
   "../rpc/common/CMakeLists.txt"
   "../rpc/net/CMakeLists.txt"
+  "../rpc/rpc/CMakeLists.txt"
   "../rpc/tcp/CMakeLists.txt"
   "../testcases/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCCompiler.cmake.in"
@@ -122,13 +124,18 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "testcases/CMakeFiles/CMakeDirectoryInformation.cmake"
   "rpc/net/CMakeFiles/CMakeDirectoryInformation.cmake"
   "rpc/tcp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "rpc/coder/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "rpc/rpc/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "rpc/common/CMakeFiles/common.dir/DependInfo.cmake"
-  "testcases/CMakeFiles/test_tcp.dir/DependInfo.cmake"
-  "testcases/CMakeFiles/test_client.dir/DependInfo.cmake"
+  "testcases/CMakeFiles/proto.dir/DependInfo.cmake"
+  "testcases/CMakeFiles/test_rpc_server.dir/DependInfo.cmake"
+  "testcases/CMakeFiles/test_rpc_client.dir/DependInfo.cmake"
   "rpc/net/CMakeFiles/net.dir/DependInfo.cmake"
   "rpc/tcp/CMakeFiles/tcp.dir/DependInfo.cmake"
+  "rpc/coder/CMakeFiles/coder.dir/DependInfo.cmake"
+  "rpc/rpc/CMakeFiles/rpc.dir/DependInfo.cmake"
   )

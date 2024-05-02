@@ -130,30 +130,43 @@ common/fast:
 .PHONY : common/fast
 
 #=============================================================================
-# Target rules for targets named test_tcp
+# Target rules for targets named proto
 
 # Build rule for target.
-test_tcp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcp
-.PHONY : test_tcp
+proto: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 proto
+.PHONY : proto
 
 # fast build rule for target.
-test_tcp/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/build
-.PHONY : test_tcp/fast
+proto/fast:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/build
+.PHONY : proto/fast
 
 #=============================================================================
-# Target rules for targets named test_client
+# Target rules for targets named test_rpc_server
 
 # Build rule for target.
-test_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_client
-.PHONY : test_client
+test_rpc_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rpc_server
+.PHONY : test_rpc_server
 
 # fast build rule for target.
-test_client/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/build
-.PHONY : test_client/fast
+test_rpc_server/fast:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/build
+.PHONY : test_rpc_server/fast
+
+#=============================================================================
+# Target rules for targets named test_rpc_client
+
+# Build rule for target.
+test_rpc_client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rpc_client
+.PHONY : test_rpc_client
+
+# fast build rule for target.
+test_rpc_client/fast:
+	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/build
+.PHONY : test_rpc_client/fast
 
 #=============================================================================
 # Target rules for targets named net
@@ -181,6 +194,32 @@ tcp/fast:
 	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/build
 .PHONY : tcp/fast
 
+#=============================================================================
+# Target rules for targets named coder
+
+# Build rule for target.
+coder: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coder
+.PHONY : coder
+
+# fast build rule for target.
+coder/fast:
+	$(MAKE) $(MAKESILENT) -f rpc/coder/CMakeFiles/coder.dir/build.make rpc/coder/CMakeFiles/coder.dir/build
+.PHONY : coder/fast
+
+#=============================================================================
+# Target rules for targets named rpc
+
+# Build rule for target.
+rpc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc
+.PHONY : rpc
+
+# fast build rule for target.
+rpc/fast:
+	$(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/build
+.PHONY : rpc/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -189,11 +228,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... coder"
 	@echo "... common"
 	@echo "... net"
+	@echo "... proto"
+	@echo "... rpc"
 	@echo "... tcp"
-	@echo "... test_client"
-	@echo "... test_tcp"
+	@echo "... test_rpc_client"
+	@echo "... test_rpc_server"
 .PHONY : help
 
 

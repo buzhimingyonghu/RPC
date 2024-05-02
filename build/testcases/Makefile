@@ -117,80 +117,118 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-testcases/CMakeFiles/test_tcp.dir/rule:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_tcp.dir/rule
-.PHONY : testcases/CMakeFiles/test_tcp.dir/rule
+testcases/CMakeFiles/proto.dir/rule:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/proto.dir/rule
+.PHONY : testcases/CMakeFiles/proto.dir/rule
 
 # Convenience name for target.
-test_tcp: testcases/CMakeFiles/test_tcp.dir/rule
-.PHONY : test_tcp
+proto: testcases/CMakeFiles/proto.dir/rule
+.PHONY : proto
 
 # fast build rule for target.
-test_tcp/fast:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/build
-.PHONY : test_tcp/fast
+proto/fast:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/build
+.PHONY : proto/fast
 
 # Convenience name for target.
-testcases/CMakeFiles/test_client.dir/rule:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_client.dir/rule
-.PHONY : testcases/CMakeFiles/test_client.dir/rule
+testcases/CMakeFiles/test_rpc_server.dir/rule:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_rpc_server.dir/rule
+.PHONY : testcases/CMakeFiles/test_rpc_server.dir/rule
 
 # Convenience name for target.
-test_client: testcases/CMakeFiles/test_client.dir/rule
-.PHONY : test_client
+test_rpc_server: testcases/CMakeFiles/test_rpc_server.dir/rule
+.PHONY : test_rpc_server
 
 # fast build rule for target.
-test_client/fast:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/build
-.PHONY : test_client/fast
+test_rpc_server/fast:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/build
+.PHONY : test_rpc_server/fast
 
-test_client.o: test_client.cpp.o
-.PHONY : test_client.o
+# Convenience name for target.
+testcases/CMakeFiles/test_rpc_client.dir/rule:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 testcases/CMakeFiles/test_rpc_client.dir/rule
+.PHONY : testcases/CMakeFiles/test_rpc_client.dir/rule
 
-# target to build an object file
-test_client.cpp.o:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.o
-.PHONY : test_client.cpp.o
+# Convenience name for target.
+test_rpc_client: testcases/CMakeFiles/test_rpc_client.dir/rule
+.PHONY : test_rpc_client
 
-test_client.i: test_client.cpp.i
-.PHONY : test_client.i
+# fast build rule for target.
+test_rpc_client/fast:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/build
+.PHONY : test_rpc_client/fast
 
-# target to preprocess a source file
-test_client.cpp.i:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.i
-.PHONY : test_client.cpp.i
-
-test_client.s: test_client.cpp.s
-.PHONY : test_client.s
-
-# target to generate assembly for a file
-test_client.cpp.s:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_client.dir/build.make testcases/CMakeFiles/test_client.dir/test_client.cpp.s
-.PHONY : test_client.cpp.s
-
-test_tcp.o: test_tcp.cpp.o
-.PHONY : test_tcp.o
+order.pb.o: order.pb.cc.o
+.PHONY : order.pb.o
 
 # target to build an object file
-test_tcp.cpp.o:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.o
-.PHONY : test_tcp.cpp.o
+order.pb.cc.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/order.pb.cc.o
+.PHONY : order.pb.cc.o
 
-test_tcp.i: test_tcp.cpp.i
-.PHONY : test_tcp.i
+order.pb.i: order.pb.cc.i
+.PHONY : order.pb.i
 
 # target to preprocess a source file
-test_tcp.cpp.i:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.i
-.PHONY : test_tcp.cpp.i
+order.pb.cc.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/order.pb.cc.i
+.PHONY : order.pb.cc.i
 
-test_tcp.s: test_tcp.cpp.s
-.PHONY : test_tcp.s
+order.pb.s: order.pb.cc.s
+.PHONY : order.pb.s
 
 # target to generate assembly for a file
-test_tcp.cpp.s:
-	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_tcp.dir/build.make testcases/CMakeFiles/test_tcp.dir/test_tcp.cpp.s
-.PHONY : test_tcp.cpp.s
+order.pb.cc.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/order.pb.cc.s
+.PHONY : order.pb.cc.s
+
+test_rpc_client.o: test_rpc_client.cpp.o
+.PHONY : test_rpc_client.o
+
+# target to build an object file
+test_rpc_client.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.o
+.PHONY : test_rpc_client.cpp.o
+
+test_rpc_client.i: test_rpc_client.cpp.i
+.PHONY : test_rpc_client.i
+
+# target to preprocess a source file
+test_rpc_client.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.i
+.PHONY : test_rpc_client.cpp.i
+
+test_rpc_client.s: test_rpc_client.cpp.s
+.PHONY : test_rpc_client.s
+
+# target to generate assembly for a file
+test_rpc_client.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/test_rpc_client.cpp.s
+.PHONY : test_rpc_client.cpp.s
+
+test_rpc_server.o: test_rpc_server.cpp.o
+.PHONY : test_rpc_server.o
+
+# target to build an object file
+test_rpc_server.cpp.o:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/test_rpc_server.cpp.o
+.PHONY : test_rpc_server.cpp.o
+
+test_rpc_server.i: test_rpc_server.cpp.i
+.PHONY : test_rpc_server.i
+
+# target to preprocess a source file
+test_rpc_server.cpp.i:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/test_rpc_server.cpp.i
+.PHONY : test_rpc_server.cpp.i
+
+test_rpc_server.s: test_rpc_server.cpp.s
+.PHONY : test_rpc_server.s
+
+# target to generate assembly for a file
+test_rpc_server.cpp.s:
+	cd /home/nlove/temp/RPC/build && $(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/test_rpc_server.cpp.s
+.PHONY : test_rpc_server.cpp.s
 
 # Help Target
 help:
@@ -200,14 +238,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... test_client"
-	@echo "... test_tcp"
-	@echo "... test_client.o"
-	@echo "... test_client.i"
-	@echo "... test_client.s"
-	@echo "... test_tcp.o"
-	@echo "... test_tcp.i"
-	@echo "... test_tcp.s"
+	@echo "... proto"
+	@echo "... test_rpc_client"
+	@echo "... test_rpc_server"
+	@echo "... order.pb.o"
+	@echo "... order.pb.i"
+	@echo "... order.pb.s"
+	@echo "... test_rpc_client.o"
+	@echo "... test_rpc_client.i"
+	@echo "... test_rpc_client.s"
+	@echo "... test_rpc_server.o"
+	@echo "... test_rpc_server.i"
+	@echo "... test_rpc_server.s"
 .PHONY : help
 
 

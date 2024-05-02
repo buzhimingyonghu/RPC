@@ -54,6 +54,7 @@ namespace rpc
         {
             return m_write_callback;
         }
+        return nullptr;
     }
     void FdEvent::cancle(TriggerEvent event_type)
     {

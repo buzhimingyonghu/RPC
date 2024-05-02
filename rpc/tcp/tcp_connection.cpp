@@ -3,6 +3,8 @@
 #include "fd_event_group.h"
 #include "log.h"
 #include "string_coder.h"
+#include "tinypb_coder.h"
+#include "rpc_dispatcher.h"
 namespace rpc
 {
     TcpConnection::TcpConnection(Eventloop *event_loop, int fd, int buffer_size, NetAddr::s_ptr peer_addr, TcpConnectionType type)
@@ -17,7 +19,7 @@ namespace rpc
         m_out_buffer = std::make_shared<TcpBuffer>(buffer_size);
         m_fd_event = FdEventGroup::GetFdEventGroup()->getFdEvent(fd);
         m_fd_event->setNonBlock();
-        m_coder = new StringCoder();
+        m_coder = new TinyPBCoder();
 
         if (m_connection_type == TcpConnectionByServer)
         {
@@ -67,12 +69,18 @@ namespace rpc
                 else if (rt < read_count)
                 {
                     is_read_all = true;
+                    DEBUGLOG("read all finish")
                     break;
                 }
             }
             else if (rt == 0)
             {
                 is_close = true;
+                break;
+            }
+            else if (rt == -1 && errno == EAGAIN)
+            {
+                is_read_all = true;
                 break;
             }
         }
@@ -113,21 +121,19 @@ namespace rpc
     {
         // 将 RPC 请求执行业务逻辑，获取 RPC 响应, 再把 RPC 响应发送回去
         // 问题，是不是多此一举
-        std::vector<char> tmp;
-        int size = m_in_buffer->readAble();
-        tmp.resize(size);
-        m_in_buffer->readFromBuffer(tmp, size);
+        std::vector<AbstractProtocol::s_ptr> result;
+        std::vector<AbstractProtocol::s_ptr> replay_messages;
 
-        std::string msg;
-        for (size_t i = 0; i < tmp.size(); ++i)
+        m_coder->decode(result, m_in_buffer);
+        for (size_t i = 0; i < result.size(); i++)
         {
-            msg += tmp[i];
+            INFOLOG("success get request[%s] from client[%s]", result[i]->m_req_id.c_str(), m_peer_addr->toString().c_str());
+            std::shared_ptr<TinyPBProtocol> message = std::make_shared<TinyPBProtocol>();
+
+            RpcDispatcher::GetRpcDispatcher()->dispatch(result[i], message, this);
+            replay_messages.emplace_back(message);
         }
-
-        INFOLOG("success get request[%s] from client[%s]", msg.c_str(), m_peer_addr->toString().c_str());
-
-        m_out_buffer->writeToBuffer(msg.c_str(), msg.length());
-
+        m_coder->encode(replay_messages, m_out_buffer);
         listenWrite();
     }
     // 从输入缓冲区中解码消息
@@ -140,7 +146,7 @@ namespace rpc
 
         for (size_t i = 0; i < result.size(); ++i)
         {
-            std::string req_id = result[i]->getReqId();
+            std::string req_id = result[i]->m_req_id;
             auto it = m_read_dones.find(req_id);
             if (it != m_read_dones.end())
             {
@@ -185,7 +191,7 @@ namespace rpc
 
             if (rt >= write_size)
             {
-                DEBUGLOG("no data need to send to client [%s]", m_peer_addr->toString().c_str());
+                DEBUGLOG("client success send [%s]", m_peer_addr->toString().c_str());
                 is_write_all = true;
                 break;
             }

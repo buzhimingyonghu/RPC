@@ -14,7 +14,7 @@ namespace rpc
     template <typename... Args>
     std::string formatString(const char *str, Args &&...args)
     {
-        int size = snprintf(nullptr, 0, str, std::forward<Args>(args)...);
+        int size = std::snprintf(nullptr, 0, str, std::forward<Args>(args)...);
 
         std::string result;
         if (size > 0)
@@ -38,36 +38,36 @@ namespace rpc
         Error = 3
     };
 
-#define DEBUGLOG(str, args...)                                                                                                                                    \
-    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Debug)                                                                                              \
-    {                                                                                                                                                             \
-        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                              \
-        fileInfo.resize(80, ' ');                                                                                                                                 \
-        rpc::Logger::GetGlobalLogger()->pushLog((new rpc::LogEvent(rpc::LogLevel::Debug))->toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
-        rpc::Logger::GetGlobalLogger()->log();                                                                                                                    \
+#define DEBUGLOG(str, args...)                                                                                                                               \
+    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Debug)                                                                                         \
+    {                                                                                                                                                        \
+        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                         \
+        fileInfo.resize(60, ' ');                                                                                                                            \
+        rpc::Logger::GetGlobalLogger()->pushLog((rpc::LogEvent(rpc::LogLevel::Debug)).toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
+        rpc::Logger::GetGlobalLogger()->log();                                                                                                               \
     }
-#define INFOLOG(str, args...)                                                                                                                                    \
-    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Info)                                                                                              \
-    {                                                                                                                                                            \
-        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                             \
-        fileInfo.resize(80, ' ');                                                                                                                                \
-        rpc::Logger::GetGlobalLogger()->pushLog((new rpc::LogEvent(rpc::LogLevel::Info))->toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
-        rpc::Logger::GetGlobalLogger()->log();                                                                                                                   \
+#define INFOLOG(str, args...)                                                                                                                               \
+    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Info)                                                                                         \
+    {                                                                                                                                                       \
+        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                        \
+        fileInfo.resize(60, ' ');                                                                                                                           \
+        rpc::Logger::GetGlobalLogger()->pushLog((rpc::LogEvent(rpc::LogLevel::Info)).toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
+        rpc::Logger::GetGlobalLogger()->log();                                                                                                              \
     }
 
-#define ERRORLOG(str, args...)                                                                                                                                    \
-    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Error)                                                                                              \
-    {                                                                                                                                                             \
-        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                              \
-        fileInfo.resize(80, ' ');                                                                                                                                 \
-        rpc::Logger::GetGlobalLogger()->pushLog((new rpc::LogEvent(rpc::LogLevel::Error))->toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
-        rpc::Logger::GetGlobalLogger()->log();                                                                                                                    \
-    }                                                                                                                                                             \
-    /*                                                                                                                                                            \
-    日志管理器                                                                                                                                               \
-    1.添加日志事件信息到日志队列                                                                                                                     \
-    2.打印日志                                                                                                                                                \
-    3.设置日志的输出路径                                                                                                                                 \
+#define ERRORLOG(str, args...)                                                                                                                               \
+    if (rpc::Logger::GetGlobalLogger()->getLogLevel() <= rpc::Error)                                                                                         \
+    {                                                                                                                                                        \
+        std::string fileInfo = "[" + std::string(__FILE__) + ":" + std::string(__FUNCTION__) + ":" + std::to_string(__LINE__) + "]";                         \
+        fileInfo.resize(60, ' ');                                                                                                                            \
+        rpc::Logger::GetGlobalLogger()->pushLog((rpc::LogEvent(rpc::LogLevel::Error)).toString() + fileInfo + "\t" + rpc::formatString(str, ##args) + "\n"); \
+        rpc::Logger::GetGlobalLogger()->log();                                                                                                               \
+    }                                                                                                                                                        \
+    /*                                                                                                                                                       \
+    日志管理器                                                                                                                                          \
+    1.添加日志事件信息到日志队列                                                                                                                \
+    2.打印日志                                                                                                                                           \
+    3.设置日志的输出路径                                                                                                                            \
     */
     class Logger
     {
