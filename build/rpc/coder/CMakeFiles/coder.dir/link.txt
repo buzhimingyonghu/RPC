@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libcoder.a CMakeFiles/coder.dir/tinypb_coder.cpp.o CMakeFiles/coder.dir/tinypb_protocol.cpp.o
-/usr/bin/ranlib ../../../lib/libcoder.a

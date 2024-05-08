@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include "log.h"
-#include "io_thread.h"
+#include "common/log.h"
+#include "net/io_thread.h"
 namespace rpc
 {
     class IOThreadPoll

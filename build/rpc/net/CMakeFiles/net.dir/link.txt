@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libnet.a CMakeFiles/net.dir/eventloop.cpp.o CMakeFiles/net.dir/fd_event.cpp.o CMakeFiles/net.dir/fd_event_group.cpp.o CMakeFiles/net.dir/io_thread.cpp.o CMakeFiles/net.dir/io_thread_pool.cpp.o CMakeFiles/net.dir/time_event.cpp.o CMakeFiles/net.dir/timer.cpp.o CMakeFiles/net.dir/wakeup_fd_event.cpp.o
-/usr/bin/ranlib ../../../lib/libnet.a

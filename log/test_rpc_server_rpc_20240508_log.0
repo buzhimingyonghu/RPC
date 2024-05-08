@@ -1,0 +1,319 @@
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158927009]
+[INFO]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:initWakeUpFdEvent	m_wakeup_fd=4
+[INFO]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[4]
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:Timer:11]            	timer fd=5
+[INFO]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[5]
+[INFO]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:Eventloop:67]    	succ create event loop in thread 47028
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addTimerEvent:91]	time_event_info=syncloop log push
+[DEBUG]	[24-05-08 17:02:06.509]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158927009
+[INFO]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:initWakeUpFdEvent	m_wakeup_fd=8
+[INFO]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[8]
+[DEBUG]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/timer.cc:Timer:11]            	timer fd=9
+[INFO]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[9]
+[INFO]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:Eventloop:67]    	succ create event loop in thread 47031
+[DEBUG]	[24-05-08 17:02:06.514]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:47]         	IOThread 47031 created, wait start semaphore
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:IOThread:16]     	IOThread [47031] create success
+[INFO]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:initWakeUpFdEvent	m_wakeup_fd=11
+[INFO]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[11]
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/timer.cc:Timer:11]            	timer fd=12
+[INFO]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[12]
+[INFO]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:Eventloop:67]    	succ create event loop in thread 47032
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:47]         	IOThread 47032 created, wait start semaphore
+[DEBUG]	[24-05-08 17:02:06.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:IOThread:16]     	IOThread [47032] create success
+[INFO]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:initWakeUpFdEvent	m_wakeup_fd=14
+[INFO]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[14]
+[DEBUG]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/timer.cc:Timer:11]            	timer fd=15
+[INFO]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[15]
+[INFO]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:Eventloop:67]    	succ create event loop in thread 47033
+[DEBUG]	[24-05-08 17:02:06.516]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:47]         	IOThread 47033 created, wait start semaphore
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:IOThread:16]     	IOThread [47033] create success
+[INFO]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:initWakeUpFdEvent	m_wakeup_fd=17
+[INFO]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[17]
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/timer.cc:Timer:11]            	timer fd=18
+[INFO]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[18]
+[INFO]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:Eventloop:67]    	succ create event loop in thread 47034
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:47]         	IOThread 47034 created, wait start semaphore
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:IOThread:16]     	IOThread [47034] create success
+[INFO]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[6]
+[INFO]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/tcp/tcp_server.cc:TcpServer:9]    	rocket TcpServer listen sucess on [127.0.0.1:12345]
+[DEBUG]	[24-05-08 17:02:06.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:start:34]        	Now invoke IOThread 47031
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:start:34]        	Now invoke IOThread 47032
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:start:34]        	Now invoke IOThread 47033
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:start:34]        	Now invoke IOThread 47034
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:49]         	IOThread 47031 start loop 
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:49]         	IOThread 47032 start loop 
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:49]         	IOThread 47033 start loop 
+[DEBUG]	[24-05-08 17:02:06.518]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/io_thread.cc:Main:49]         	IOThread 47034 start loop 
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158927510]
+[DEBUG]	[24-05-08 17:02:07.10]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158927510
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158928011]
+[DEBUG]	[24-05-08 17:02:07.511]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158928011
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158928512]
+[DEBUG]	[24-05-08 17:02:08.12]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158928512
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158929013]
+[DEBUG]	[24-05-08 17:02:08.513]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158929013
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158929514]
+[DEBUG]	[24-05-08 17:02:09.14]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158929514
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158930014]
+[DEBUG]	[24-05-08 17:02:09.514]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158930014
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158930515]
+[DEBUG]	[24-05-08 17:02:10.15]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158930515
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158931015]
+[DEBUG]	[24-05-08 17:02:10.515]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158931015
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158931516]
+[DEBUG]	[24-05-08 17:02:11.16]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158931516
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158932017]
+[DEBUG]	[24-05-08 17:02:11.517]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158932017
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158932517]
+[DEBUG]	[24-05-08 17:02:12.17]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158932517
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158933018]
+[DEBUG]	[24-05-08 17:02:12.518]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158933018
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158933519]
+[DEBUG]	[24-05-08 17:02:13.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158933519
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158934019]
+[DEBUG]	[24-05-08 17:02:13.519]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158934019
+[DEBUG]	[24-05-08 17:02:14.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:14.19]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:14.20]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:14.20]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:14.20]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158934520]
+[DEBUG]	[24-05-08 17:02:14.20]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158934520
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158935020]
+[DEBUG]	[24-05-08 17:02:14.520]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158935020
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158935521]
+[DEBUG]	[24-05-08 17:02:15.21]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158935521
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158936021]
+[DEBUG]	[24-05-08 17:02:15.521]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158936021
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158936522]
+[DEBUG]	[24-05-08 17:02:16.22]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158936522
+[DEBUG]	[24-05-08 17:02:16.522]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:16.522]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:16.522]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:16.523]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:16.523]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158937023]
+[DEBUG]	[24-05-08 17:02:16.523]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158937023
+[DEBUG]	[24-05-08 17:02:16.528]	[47028:47033]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=0
+[DEBUG]	[24-05-08 17:02:16.528]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=0
+[DEBUG]	[24-05-08 17:02:16.528]	[47028:47032]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=0
+[DEBUG]	[24-05-08 17:02:16.528]	[47028:47034]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=0
+[DEBUG]	[24-05-08 17:02:16.610]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:16.610]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 6 trigger EPOLLIN event
+[INFO]	[24-05-08 17:02:16.610]	[47028:47028]	[/home/nlove/temp/RPC/rpc/tcp/tcp_acceptor.cc:accept:70]    	A client have accpeted succ, peer addr [0.0.0.0:50374]
+[INFO]	[24-05-08 17:02:16.610]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:wakeup:177]      	WAKE UP
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/wakeup_fd_event.cc:wakeup:20] 	success wakeup read 8 bytes
+[INFO]	[24-05-08 17:02:16.611]	[47028:47028]	[/home/nlove/temp/RPC/rpc/tcp/tcp_server.cc:onAccept:53]    	TcpServer succ get client, fd=24
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 8 trigger EPOLLIN event
+[INFO]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:operator():206]  	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:operator():206]  	add event to set_listen_fd success fd[24]
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:operator():108]  	read full bytes from wakeup fd[8]
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 24 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:onRead:59]  	success read 58 bytes from addr[0.0.0.0:50374], client fd[24]
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:onRead:72]  	read all finish
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:45]  	get pk_len = 58
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:87]  	parse req_id_len=8
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:96]  	parse req_id=99998888
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:112] 	parse method_name=Order.makeOrder
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:143] 	parse error_info=
+[DEBUG]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:decode:66]  	decode end, read all buffer data
+[INFO]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:processServe	success get request[99998888] from client[0.0.0.0:50374]
+[INFO]	[24-05-08 17:02:16.611]	[47028:47031]	[/home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.cc:parseService	parse sericve_name[Order] and method_name[makeOrder] from full name [Order.makeOrder]
+[INFO]	[24-05-08 17:02:16.614]	[47028:47031]	[/home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.cc:dispatch:81]	99998888 | get rpc request[price: 100 goods: "apple"]
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158937523]
+[DEBUG]	[24-05-08 17:02:17.23]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158937523
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158938024]
+[DEBUG]	[24-05-08 17:02:17.524]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158938024
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158938524]
+[DEBUG]	[24-05-08 17:02:18.24]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158938524
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158939025]
+[DEBUG]	[24-05-08 17:02:18.525]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158939025
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158939526]
+[DEBUG]	[24-05-08 17:02:19.26]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158939526
+[DEBUG]	[24-05-08 17:02:19.526]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:19.526]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:19.527]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:19.527]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:19.527]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158940027]
+[DEBUG]	[24-05-08 17:02:19.527]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158940027
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158940527]
+[DEBUG]	[24-05-08 17:02:20.27]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158940527
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158941028]
+[DEBUG]	[24-05-08 17:02:20.528]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158941028
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158941528]
+[DEBUG]	[24-05-08 17:02:21.28]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158941528
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158942029]
+[DEBUG]	[24-05-08 17:02:21.529]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158942029
+[INFO]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/rpc/rpc_dispatcher.cc:dispatch:116	99998888 | dispatch success, requesut[price: 100 goods: "apple"], response[order_id: "20230514"]
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:encodeTinyPB	req_id = 99998888
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:encodeTinyPB	pk_len = 59
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/coder/tinypb_coder.cc:encodeTinyPB	encode message[99998888] success
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	mod fd=24
+[INFO]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=5
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[24]
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:157]         	fd 24 trigger EPOLLOUT event
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:onWrite:194]	client success send [0.0.0.0:50374]
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	mod fd=24
+[INFO]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	epoll_event.events=1
+[DEBUG]	[24-05-08 17:02:21.614]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:addEpollEvent:198	add event to set_listen_fd success fd[24]
+[DEBUG]	[24-05-08 17:02:22.29]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:22.30]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:22.30]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:22.30]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:22.30]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158942530]
+[DEBUG]	[24-05-08 17:02:22.30]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158942530
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158943030]
+[DEBUG]	[24-05-08 17:02:22.530]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158943030
+[DEBUG]	[24-05-08 17:02:22.982]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:22.982]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 24 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:22.982]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:onRead:59]  	success read 0 bytes from addr[0.0.0.0:50374], client fd[24]
+[INFO]	[24-05-08 17:02:22.982]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/tcp/tcp_connection.cc:onRead:90]  	peer closed, peer addr [0.0.0.0:50374], clientfd [24]
+[DEBUG]	[24-05-08 17:02:22.982]	[47028:47031]	[99998888]	[makeOrder]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:deleteEpollEvent:	delete event success, fd[24]
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158943531]
+[DEBUG]	[24-05-08 17:02:23.31]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158943531
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158944032]
+[DEBUG]	[24-05-08 17:02:23.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158944032
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158944532]
+[DEBUG]	[24-05-08 17:02:24.32]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158944532
+[DEBUG]	[24-05-08 17:02:24.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:132]         	now end epoll_waik, rt=1
+[DEBUG]	[24-05-08 17:02:24.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/eventloop.cc:run:152]         	fd 5 trigger EPOLLIN event
+[DEBUG]	[24-05-08 17:02:24.532]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:80]          	trigger time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:24.533]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:onTimer:95]          	reset repeated time_event=syncloop log push
+[DEBUG]	[24-05-08 17:02:24.533]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/time_event.cc:resetArriveTime:	success create timer event, will excute at [1715158945033]
+[DEBUG]	[24-05-08 17:02:24.533]	[47028:47028]	[/home/nlove/temp/RPC/rpc/net/timer.cc:resetArriveTime:144] 	timer reset to 1715158945033

@@ -1,9 +1,9 @@
 #pragma once
 #include <google/protobuf/service.h>
 #include <memory>
-#include "net_addr.h"
-#include "tcp_client.h"
-#include "time_event.h"
+#include "tcp/net_addr.h"
+#include "tcp/tcp_client.h"
+#include "net/time_event.h"
 namespace rpc
 {
 #define NEWMESSAGE(type, var_name) \
@@ -13,11 +13,13 @@ namespace rpc
     std::shared_ptr<rpc::RpcController> var_name = std::make_shared<rpc::RpcController>();
 #define NEWRPCCHANNEL(addr, var_name) \
     std::shared_ptr<rpc::RpcChannel> var_name = std::make_shared<rpc::RpcChannel>(std::make_shared<rpc::IPNetAddr>(addr));
-#define CALLRPRC(channel, method_name, controller, request, response, closure)                                 \
-    {                                                                                                          \
-        channel->Init(controller, request, response, closure);                                                 \
-        Order_Stub(channel.get()).method_name(controller.get(), request.get(), response.get(), closure.get()); \
-    }                                                                                                          \
+#define CALLRPRC(channel, stub_name, method_name, controller, request, response, closure)                     \
+    {                                                                                                         \
+        channel->Init(controller, request, response, closure);                                                \
+        /*转而调用channel的callmethod*/                                                                  \
+        stub_name(channel.get()).method_name(controller.get(), request.get(), response.get(), closure.get()); \
+    }
+
     // RpcChannel 类继承自 google::protobuf::RpcChannel, 提供 RPC 通信的功能。
     class RpcChannel : public google::protobuf::RpcChannel, public std::enable_shared_from_this<RpcChannel>
     {

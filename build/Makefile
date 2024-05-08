@@ -117,108 +117,593 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named common
+# Target rules for targets named mircorpc
 
 # Build rule for target.
-common: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 common
-.PHONY : common
+mircorpc: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mircorpc
+.PHONY : mircorpc
 
 # fast build rule for target.
-common/fast:
-	$(MAKE) $(MAKESILENT) -f rpc/common/CMakeFiles/common.dir/build.make rpc/common/CMakeFiles/common.dir/build
-.PHONY : common/fast
+mircorpc/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/build
+.PHONY : mircorpc/fast
 
-#=============================================================================
-# Target rules for targets named proto
+rpc/coder/tinypb_coder.o: rpc/coder/tinypb_coder.cc.o
+.PHONY : rpc/coder/tinypb_coder.o
 
-# Build rule for target.
-proto: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 proto
-.PHONY : proto
+# target to build an object file
+rpc/coder/tinypb_coder.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_coder.cc.o
+.PHONY : rpc/coder/tinypb_coder.cc.o
 
-# fast build rule for target.
-proto/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/proto.dir/build.make testcases/CMakeFiles/proto.dir/build
-.PHONY : proto/fast
+rpc/coder/tinypb_coder.i: rpc/coder/tinypb_coder.cc.i
+.PHONY : rpc/coder/tinypb_coder.i
 
-#=============================================================================
-# Target rules for targets named test_rpc_server
+# target to preprocess a source file
+rpc/coder/tinypb_coder.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_coder.cc.i
+.PHONY : rpc/coder/tinypb_coder.cc.i
 
-# Build rule for target.
-test_rpc_server: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rpc_server
-.PHONY : test_rpc_server
+rpc/coder/tinypb_coder.s: rpc/coder/tinypb_coder.cc.s
+.PHONY : rpc/coder/tinypb_coder.s
 
-# fast build rule for target.
-test_rpc_server/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_server.dir/build.make testcases/CMakeFiles/test_rpc_server.dir/build
-.PHONY : test_rpc_server/fast
+# target to generate assembly for a file
+rpc/coder/tinypb_coder.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_coder.cc.s
+.PHONY : rpc/coder/tinypb_coder.cc.s
 
-#=============================================================================
-# Target rules for targets named test_rpc_client
+rpc/coder/tinypb_protocol.o: rpc/coder/tinypb_protocol.cc.o
+.PHONY : rpc/coder/tinypb_protocol.o
 
-# Build rule for target.
-test_rpc_client: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_rpc_client
-.PHONY : test_rpc_client
+# target to build an object file
+rpc/coder/tinypb_protocol.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_protocol.cc.o
+.PHONY : rpc/coder/tinypb_protocol.cc.o
 
-# fast build rule for target.
-test_rpc_client/fast:
-	$(MAKE) $(MAKESILENT) -f testcases/CMakeFiles/test_rpc_client.dir/build.make testcases/CMakeFiles/test_rpc_client.dir/build
-.PHONY : test_rpc_client/fast
+rpc/coder/tinypb_protocol.i: rpc/coder/tinypb_protocol.cc.i
+.PHONY : rpc/coder/tinypb_protocol.i
 
-#=============================================================================
-# Target rules for targets named net
+# target to preprocess a source file
+rpc/coder/tinypb_protocol.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_protocol.cc.i
+.PHONY : rpc/coder/tinypb_protocol.cc.i
 
-# Build rule for target.
-net: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 net
-.PHONY : net
+rpc/coder/tinypb_protocol.s: rpc/coder/tinypb_protocol.cc.s
+.PHONY : rpc/coder/tinypb_protocol.s
 
-# fast build rule for target.
-net/fast:
-	$(MAKE) $(MAKESILENT) -f rpc/net/CMakeFiles/net.dir/build.make rpc/net/CMakeFiles/net.dir/build
-.PHONY : net/fast
+# target to generate assembly for a file
+rpc/coder/tinypb_protocol.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/coder/tinypb_protocol.cc.s
+.PHONY : rpc/coder/tinypb_protocol.cc.s
 
-#=============================================================================
-# Target rules for targets named tcp
+rpc/common/config.o: rpc/common/config.cc.o
+.PHONY : rpc/common/config.o
 
-# Build rule for target.
-tcp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tcp
-.PHONY : tcp
+# target to build an object file
+rpc/common/config.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/config.cc.o
+.PHONY : rpc/common/config.cc.o
 
-# fast build rule for target.
-tcp/fast:
-	$(MAKE) $(MAKESILENT) -f rpc/tcp/CMakeFiles/tcp.dir/build.make rpc/tcp/CMakeFiles/tcp.dir/build
-.PHONY : tcp/fast
+rpc/common/config.i: rpc/common/config.cc.i
+.PHONY : rpc/common/config.i
 
-#=============================================================================
-# Target rules for targets named coder
+# target to preprocess a source file
+rpc/common/config.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/config.cc.i
+.PHONY : rpc/common/config.cc.i
 
-# Build rule for target.
-coder: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 coder
-.PHONY : coder
+rpc/common/config.s: rpc/common/config.cc.s
+.PHONY : rpc/common/config.s
 
-# fast build rule for target.
-coder/fast:
-	$(MAKE) $(MAKESILENT) -f rpc/coder/CMakeFiles/coder.dir/build.make rpc/coder/CMakeFiles/coder.dir/build
-.PHONY : coder/fast
+# target to generate assembly for a file
+rpc/common/config.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/config.cc.s
+.PHONY : rpc/common/config.cc.s
 
-#=============================================================================
-# Target rules for targets named rpc
+rpc/common/log.o: rpc/common/log.cc.o
+.PHONY : rpc/common/log.o
 
-# Build rule for target.
-rpc: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rpc
-.PHONY : rpc
+# target to build an object file
+rpc/common/log.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/log.cc.o
+.PHONY : rpc/common/log.cc.o
 
-# fast build rule for target.
-rpc/fast:
-	$(MAKE) $(MAKESILENT) -f rpc/rpc/CMakeFiles/rpc.dir/build.make rpc/rpc/CMakeFiles/rpc.dir/build
-.PHONY : rpc/fast
+rpc/common/log.i: rpc/common/log.cc.i
+.PHONY : rpc/common/log.i
+
+# target to preprocess a source file
+rpc/common/log.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/log.cc.i
+.PHONY : rpc/common/log.cc.i
+
+rpc/common/log.s: rpc/common/log.cc.s
+.PHONY : rpc/common/log.s
+
+# target to generate assembly for a file
+rpc/common/log.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/log.cc.s
+.PHONY : rpc/common/log.cc.s
+
+rpc/common/msg_id_util.o: rpc/common/msg_id_util.cc.o
+.PHONY : rpc/common/msg_id_util.o
+
+# target to build an object file
+rpc/common/msg_id_util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/msg_id_util.cc.o
+.PHONY : rpc/common/msg_id_util.cc.o
+
+rpc/common/msg_id_util.i: rpc/common/msg_id_util.cc.i
+.PHONY : rpc/common/msg_id_util.i
+
+# target to preprocess a source file
+rpc/common/msg_id_util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/msg_id_util.cc.i
+.PHONY : rpc/common/msg_id_util.cc.i
+
+rpc/common/msg_id_util.s: rpc/common/msg_id_util.cc.s
+.PHONY : rpc/common/msg_id_util.s
+
+# target to generate assembly for a file
+rpc/common/msg_id_util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/msg_id_util.cc.s
+.PHONY : rpc/common/msg_id_util.cc.s
+
+rpc/common/run_time.o: rpc/common/run_time.cc.o
+.PHONY : rpc/common/run_time.o
+
+# target to build an object file
+rpc/common/run_time.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/run_time.cc.o
+.PHONY : rpc/common/run_time.cc.o
+
+rpc/common/run_time.i: rpc/common/run_time.cc.i
+.PHONY : rpc/common/run_time.i
+
+# target to preprocess a source file
+rpc/common/run_time.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/run_time.cc.i
+.PHONY : rpc/common/run_time.cc.i
+
+rpc/common/run_time.s: rpc/common/run_time.cc.s
+.PHONY : rpc/common/run_time.s
+
+# target to generate assembly for a file
+rpc/common/run_time.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/run_time.cc.s
+.PHONY : rpc/common/run_time.cc.s
+
+rpc/common/util.o: rpc/common/util.cc.o
+.PHONY : rpc/common/util.o
+
+# target to build an object file
+rpc/common/util.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/util.cc.o
+.PHONY : rpc/common/util.cc.o
+
+rpc/common/util.i: rpc/common/util.cc.i
+.PHONY : rpc/common/util.i
+
+# target to preprocess a source file
+rpc/common/util.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/util.cc.i
+.PHONY : rpc/common/util.cc.i
+
+rpc/common/util.s: rpc/common/util.cc.s
+.PHONY : rpc/common/util.s
+
+# target to generate assembly for a file
+rpc/common/util.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/common/util.cc.s
+.PHONY : rpc/common/util.cc.s
+
+rpc/net/eventloop.o: rpc/net/eventloop.cc.o
+.PHONY : rpc/net/eventloop.o
+
+# target to build an object file
+rpc/net/eventloop.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/eventloop.cc.o
+.PHONY : rpc/net/eventloop.cc.o
+
+rpc/net/eventloop.i: rpc/net/eventloop.cc.i
+.PHONY : rpc/net/eventloop.i
+
+# target to preprocess a source file
+rpc/net/eventloop.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/eventloop.cc.i
+.PHONY : rpc/net/eventloop.cc.i
+
+rpc/net/eventloop.s: rpc/net/eventloop.cc.s
+.PHONY : rpc/net/eventloop.s
+
+# target to generate assembly for a file
+rpc/net/eventloop.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/eventloop.cc.s
+.PHONY : rpc/net/eventloop.cc.s
+
+rpc/net/fd_event.o: rpc/net/fd_event.cc.o
+.PHONY : rpc/net/fd_event.o
+
+# target to build an object file
+rpc/net/fd_event.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event.cc.o
+.PHONY : rpc/net/fd_event.cc.o
+
+rpc/net/fd_event.i: rpc/net/fd_event.cc.i
+.PHONY : rpc/net/fd_event.i
+
+# target to preprocess a source file
+rpc/net/fd_event.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event.cc.i
+.PHONY : rpc/net/fd_event.cc.i
+
+rpc/net/fd_event.s: rpc/net/fd_event.cc.s
+.PHONY : rpc/net/fd_event.s
+
+# target to generate assembly for a file
+rpc/net/fd_event.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event.cc.s
+.PHONY : rpc/net/fd_event.cc.s
+
+rpc/net/fd_event_group.o: rpc/net/fd_event_group.cc.o
+.PHONY : rpc/net/fd_event_group.o
+
+# target to build an object file
+rpc/net/fd_event_group.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event_group.cc.o
+.PHONY : rpc/net/fd_event_group.cc.o
+
+rpc/net/fd_event_group.i: rpc/net/fd_event_group.cc.i
+.PHONY : rpc/net/fd_event_group.i
+
+# target to preprocess a source file
+rpc/net/fd_event_group.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event_group.cc.i
+.PHONY : rpc/net/fd_event_group.cc.i
+
+rpc/net/fd_event_group.s: rpc/net/fd_event_group.cc.s
+.PHONY : rpc/net/fd_event_group.s
+
+# target to generate assembly for a file
+rpc/net/fd_event_group.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/fd_event_group.cc.s
+.PHONY : rpc/net/fd_event_group.cc.s
+
+rpc/net/io_thread.o: rpc/net/io_thread.cc.o
+.PHONY : rpc/net/io_thread.o
+
+# target to build an object file
+rpc/net/io_thread.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread.cc.o
+.PHONY : rpc/net/io_thread.cc.o
+
+rpc/net/io_thread.i: rpc/net/io_thread.cc.i
+.PHONY : rpc/net/io_thread.i
+
+# target to preprocess a source file
+rpc/net/io_thread.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread.cc.i
+.PHONY : rpc/net/io_thread.cc.i
+
+rpc/net/io_thread.s: rpc/net/io_thread.cc.s
+.PHONY : rpc/net/io_thread.s
+
+# target to generate assembly for a file
+rpc/net/io_thread.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread.cc.s
+.PHONY : rpc/net/io_thread.cc.s
+
+rpc/net/io_thread_pool.o: rpc/net/io_thread_pool.cc.o
+.PHONY : rpc/net/io_thread_pool.o
+
+# target to build an object file
+rpc/net/io_thread_pool.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread_pool.cc.o
+.PHONY : rpc/net/io_thread_pool.cc.o
+
+rpc/net/io_thread_pool.i: rpc/net/io_thread_pool.cc.i
+.PHONY : rpc/net/io_thread_pool.i
+
+# target to preprocess a source file
+rpc/net/io_thread_pool.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread_pool.cc.i
+.PHONY : rpc/net/io_thread_pool.cc.i
+
+rpc/net/io_thread_pool.s: rpc/net/io_thread_pool.cc.s
+.PHONY : rpc/net/io_thread_pool.s
+
+# target to generate assembly for a file
+rpc/net/io_thread_pool.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/io_thread_pool.cc.s
+.PHONY : rpc/net/io_thread_pool.cc.s
+
+rpc/net/time_event.o: rpc/net/time_event.cc.o
+.PHONY : rpc/net/time_event.o
+
+# target to build an object file
+rpc/net/time_event.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/time_event.cc.o
+.PHONY : rpc/net/time_event.cc.o
+
+rpc/net/time_event.i: rpc/net/time_event.cc.i
+.PHONY : rpc/net/time_event.i
+
+# target to preprocess a source file
+rpc/net/time_event.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/time_event.cc.i
+.PHONY : rpc/net/time_event.cc.i
+
+rpc/net/time_event.s: rpc/net/time_event.cc.s
+.PHONY : rpc/net/time_event.s
+
+# target to generate assembly for a file
+rpc/net/time_event.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/time_event.cc.s
+.PHONY : rpc/net/time_event.cc.s
+
+rpc/net/timer.o: rpc/net/timer.cc.o
+.PHONY : rpc/net/timer.o
+
+# target to build an object file
+rpc/net/timer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/timer.cc.o
+.PHONY : rpc/net/timer.cc.o
+
+rpc/net/timer.i: rpc/net/timer.cc.i
+.PHONY : rpc/net/timer.i
+
+# target to preprocess a source file
+rpc/net/timer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/timer.cc.i
+.PHONY : rpc/net/timer.cc.i
+
+rpc/net/timer.s: rpc/net/timer.cc.s
+.PHONY : rpc/net/timer.s
+
+# target to generate assembly for a file
+rpc/net/timer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/timer.cc.s
+.PHONY : rpc/net/timer.cc.s
+
+rpc/net/wakeup_fd_event.o: rpc/net/wakeup_fd_event.cc.o
+.PHONY : rpc/net/wakeup_fd_event.o
+
+# target to build an object file
+rpc/net/wakeup_fd_event.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/wakeup_fd_event.cc.o
+.PHONY : rpc/net/wakeup_fd_event.cc.o
+
+rpc/net/wakeup_fd_event.i: rpc/net/wakeup_fd_event.cc.i
+.PHONY : rpc/net/wakeup_fd_event.i
+
+# target to preprocess a source file
+rpc/net/wakeup_fd_event.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/wakeup_fd_event.cc.i
+.PHONY : rpc/net/wakeup_fd_event.cc.i
+
+rpc/net/wakeup_fd_event.s: rpc/net/wakeup_fd_event.cc.s
+.PHONY : rpc/net/wakeup_fd_event.s
+
+# target to generate assembly for a file
+rpc/net/wakeup_fd_event.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/net/wakeup_fd_event.cc.s
+.PHONY : rpc/net/wakeup_fd_event.cc.s
+
+rpc/rpc/rpc_channel.o: rpc/rpc/rpc_channel.cc.o
+.PHONY : rpc/rpc/rpc_channel.o
+
+# target to build an object file
+rpc/rpc/rpc_channel.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_channel.cc.o
+.PHONY : rpc/rpc/rpc_channel.cc.o
+
+rpc/rpc/rpc_channel.i: rpc/rpc/rpc_channel.cc.i
+.PHONY : rpc/rpc/rpc_channel.i
+
+# target to preprocess a source file
+rpc/rpc/rpc_channel.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_channel.cc.i
+.PHONY : rpc/rpc/rpc_channel.cc.i
+
+rpc/rpc/rpc_channel.s: rpc/rpc/rpc_channel.cc.s
+.PHONY : rpc/rpc/rpc_channel.s
+
+# target to generate assembly for a file
+rpc/rpc/rpc_channel.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_channel.cc.s
+.PHONY : rpc/rpc/rpc_channel.cc.s
+
+rpc/rpc/rpc_controller.o: rpc/rpc/rpc_controller.cc.o
+.PHONY : rpc/rpc/rpc_controller.o
+
+# target to build an object file
+rpc/rpc/rpc_controller.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_controller.cc.o
+.PHONY : rpc/rpc/rpc_controller.cc.o
+
+rpc/rpc/rpc_controller.i: rpc/rpc/rpc_controller.cc.i
+.PHONY : rpc/rpc/rpc_controller.i
+
+# target to preprocess a source file
+rpc/rpc/rpc_controller.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_controller.cc.i
+.PHONY : rpc/rpc/rpc_controller.cc.i
+
+rpc/rpc/rpc_controller.s: rpc/rpc/rpc_controller.cc.s
+.PHONY : rpc/rpc/rpc_controller.s
+
+# target to generate assembly for a file
+rpc/rpc/rpc_controller.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_controller.cc.s
+.PHONY : rpc/rpc/rpc_controller.cc.s
+
+rpc/rpc/rpc_dispatcher.o: rpc/rpc/rpc_dispatcher.cc.o
+.PHONY : rpc/rpc/rpc_dispatcher.o
+
+# target to build an object file
+rpc/rpc/rpc_dispatcher.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_dispatcher.cc.o
+.PHONY : rpc/rpc/rpc_dispatcher.cc.o
+
+rpc/rpc/rpc_dispatcher.i: rpc/rpc/rpc_dispatcher.cc.i
+.PHONY : rpc/rpc/rpc_dispatcher.i
+
+# target to preprocess a source file
+rpc/rpc/rpc_dispatcher.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_dispatcher.cc.i
+.PHONY : rpc/rpc/rpc_dispatcher.cc.i
+
+rpc/rpc/rpc_dispatcher.s: rpc/rpc/rpc_dispatcher.cc.s
+.PHONY : rpc/rpc/rpc_dispatcher.s
+
+# target to generate assembly for a file
+rpc/rpc/rpc_dispatcher.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/rpc/rpc_dispatcher.cc.s
+.PHONY : rpc/rpc/rpc_dispatcher.cc.s
+
+rpc/tcp/net_addr.o: rpc/tcp/net_addr.cc.o
+.PHONY : rpc/tcp/net_addr.o
+
+# target to build an object file
+rpc/tcp/net_addr.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/net_addr.cc.o
+.PHONY : rpc/tcp/net_addr.cc.o
+
+rpc/tcp/net_addr.i: rpc/tcp/net_addr.cc.i
+.PHONY : rpc/tcp/net_addr.i
+
+# target to preprocess a source file
+rpc/tcp/net_addr.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/net_addr.cc.i
+.PHONY : rpc/tcp/net_addr.cc.i
+
+rpc/tcp/net_addr.s: rpc/tcp/net_addr.cc.s
+.PHONY : rpc/tcp/net_addr.s
+
+# target to generate assembly for a file
+rpc/tcp/net_addr.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/net_addr.cc.s
+.PHONY : rpc/tcp/net_addr.cc.s
+
+rpc/tcp/tcp_acceptor.o: rpc/tcp/tcp_acceptor.cc.o
+.PHONY : rpc/tcp/tcp_acceptor.o
+
+# target to build an object file
+rpc/tcp/tcp_acceptor.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_acceptor.cc.o
+.PHONY : rpc/tcp/tcp_acceptor.cc.o
+
+rpc/tcp/tcp_acceptor.i: rpc/tcp/tcp_acceptor.cc.i
+.PHONY : rpc/tcp/tcp_acceptor.i
+
+# target to preprocess a source file
+rpc/tcp/tcp_acceptor.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_acceptor.cc.i
+.PHONY : rpc/tcp/tcp_acceptor.cc.i
+
+rpc/tcp/tcp_acceptor.s: rpc/tcp/tcp_acceptor.cc.s
+.PHONY : rpc/tcp/tcp_acceptor.s
+
+# target to generate assembly for a file
+rpc/tcp/tcp_acceptor.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_acceptor.cc.s
+.PHONY : rpc/tcp/tcp_acceptor.cc.s
+
+rpc/tcp/tcp_buffer.o: rpc/tcp/tcp_buffer.cc.o
+.PHONY : rpc/tcp/tcp_buffer.o
+
+# target to build an object file
+rpc/tcp/tcp_buffer.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_buffer.cc.o
+.PHONY : rpc/tcp/tcp_buffer.cc.o
+
+rpc/tcp/tcp_buffer.i: rpc/tcp/tcp_buffer.cc.i
+.PHONY : rpc/tcp/tcp_buffer.i
+
+# target to preprocess a source file
+rpc/tcp/tcp_buffer.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_buffer.cc.i
+.PHONY : rpc/tcp/tcp_buffer.cc.i
+
+rpc/tcp/tcp_buffer.s: rpc/tcp/tcp_buffer.cc.s
+.PHONY : rpc/tcp/tcp_buffer.s
+
+# target to generate assembly for a file
+rpc/tcp/tcp_buffer.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_buffer.cc.s
+.PHONY : rpc/tcp/tcp_buffer.cc.s
+
+rpc/tcp/tcp_client.o: rpc/tcp/tcp_client.cc.o
+.PHONY : rpc/tcp/tcp_client.o
+
+# target to build an object file
+rpc/tcp/tcp_client.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_client.cc.o
+.PHONY : rpc/tcp/tcp_client.cc.o
+
+rpc/tcp/tcp_client.i: rpc/tcp/tcp_client.cc.i
+.PHONY : rpc/tcp/tcp_client.i
+
+# target to preprocess a source file
+rpc/tcp/tcp_client.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_client.cc.i
+.PHONY : rpc/tcp/tcp_client.cc.i
+
+rpc/tcp/tcp_client.s: rpc/tcp/tcp_client.cc.s
+.PHONY : rpc/tcp/tcp_client.s
+
+# target to generate assembly for a file
+rpc/tcp/tcp_client.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_client.cc.s
+.PHONY : rpc/tcp/tcp_client.cc.s
+
+rpc/tcp/tcp_connection.o: rpc/tcp/tcp_connection.cc.o
+.PHONY : rpc/tcp/tcp_connection.o
+
+# target to build an object file
+rpc/tcp/tcp_connection.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_connection.cc.o
+.PHONY : rpc/tcp/tcp_connection.cc.o
+
+rpc/tcp/tcp_connection.i: rpc/tcp/tcp_connection.cc.i
+.PHONY : rpc/tcp/tcp_connection.i
+
+# target to preprocess a source file
+rpc/tcp/tcp_connection.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_connection.cc.i
+.PHONY : rpc/tcp/tcp_connection.cc.i
+
+rpc/tcp/tcp_connection.s: rpc/tcp/tcp_connection.cc.s
+.PHONY : rpc/tcp/tcp_connection.s
+
+# target to generate assembly for a file
+rpc/tcp/tcp_connection.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_connection.cc.s
+.PHONY : rpc/tcp/tcp_connection.cc.s
+
+rpc/tcp/tcp_server.o: rpc/tcp/tcp_server.cc.o
+.PHONY : rpc/tcp/tcp_server.o
+
+# target to build an object file
+rpc/tcp/tcp_server.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_server.cc.o
+.PHONY : rpc/tcp/tcp_server.cc.o
+
+rpc/tcp/tcp_server.i: rpc/tcp/tcp_server.cc.i
+.PHONY : rpc/tcp/tcp_server.i
+
+# target to preprocess a source file
+rpc/tcp/tcp_server.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_server.cc.i
+.PHONY : rpc/tcp/tcp_server.cc.i
+
+rpc/tcp/tcp_server.s: rpc/tcp/tcp_server.cc.s
+.PHONY : rpc/tcp/tcp_server.s
+
+# target to generate assembly for a file
+rpc/tcp/tcp_server.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/mircorpc.dir/build.make CMakeFiles/mircorpc.dir/rpc/tcp/tcp_server.cc.s
+.PHONY : rpc/tcp/tcp_server.cc.s
 
 # Help Target
 help:
@@ -228,14 +713,79 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... coder"
-	@echo "... common"
-	@echo "... net"
-	@echo "... proto"
-	@echo "... rpc"
-	@echo "... tcp"
-	@echo "... test_rpc_client"
-	@echo "... test_rpc_server"
+	@echo "... mircorpc"
+	@echo "... rpc/coder/tinypb_coder.o"
+	@echo "... rpc/coder/tinypb_coder.i"
+	@echo "... rpc/coder/tinypb_coder.s"
+	@echo "... rpc/coder/tinypb_protocol.o"
+	@echo "... rpc/coder/tinypb_protocol.i"
+	@echo "... rpc/coder/tinypb_protocol.s"
+	@echo "... rpc/common/config.o"
+	@echo "... rpc/common/config.i"
+	@echo "... rpc/common/config.s"
+	@echo "... rpc/common/log.o"
+	@echo "... rpc/common/log.i"
+	@echo "... rpc/common/log.s"
+	@echo "... rpc/common/msg_id_util.o"
+	@echo "... rpc/common/msg_id_util.i"
+	@echo "... rpc/common/msg_id_util.s"
+	@echo "... rpc/common/run_time.o"
+	@echo "... rpc/common/run_time.i"
+	@echo "... rpc/common/run_time.s"
+	@echo "... rpc/common/util.o"
+	@echo "... rpc/common/util.i"
+	@echo "... rpc/common/util.s"
+	@echo "... rpc/net/eventloop.o"
+	@echo "... rpc/net/eventloop.i"
+	@echo "... rpc/net/eventloop.s"
+	@echo "... rpc/net/fd_event.o"
+	@echo "... rpc/net/fd_event.i"
+	@echo "... rpc/net/fd_event.s"
+	@echo "... rpc/net/fd_event_group.o"
+	@echo "... rpc/net/fd_event_group.i"
+	@echo "... rpc/net/fd_event_group.s"
+	@echo "... rpc/net/io_thread.o"
+	@echo "... rpc/net/io_thread.i"
+	@echo "... rpc/net/io_thread.s"
+	@echo "... rpc/net/io_thread_pool.o"
+	@echo "... rpc/net/io_thread_pool.i"
+	@echo "... rpc/net/io_thread_pool.s"
+	@echo "... rpc/net/time_event.o"
+	@echo "... rpc/net/time_event.i"
+	@echo "... rpc/net/time_event.s"
+	@echo "... rpc/net/timer.o"
+	@echo "... rpc/net/timer.i"
+	@echo "... rpc/net/timer.s"
+	@echo "... rpc/net/wakeup_fd_event.o"
+	@echo "... rpc/net/wakeup_fd_event.i"
+	@echo "... rpc/net/wakeup_fd_event.s"
+	@echo "... rpc/rpc/rpc_channel.o"
+	@echo "... rpc/rpc/rpc_channel.i"
+	@echo "... rpc/rpc/rpc_channel.s"
+	@echo "... rpc/rpc/rpc_controller.o"
+	@echo "... rpc/rpc/rpc_controller.i"
+	@echo "... rpc/rpc/rpc_controller.s"
+	@echo "... rpc/rpc/rpc_dispatcher.o"
+	@echo "... rpc/rpc/rpc_dispatcher.i"
+	@echo "... rpc/rpc/rpc_dispatcher.s"
+	@echo "... rpc/tcp/net_addr.o"
+	@echo "... rpc/tcp/net_addr.i"
+	@echo "... rpc/tcp/net_addr.s"
+	@echo "... rpc/tcp/tcp_acceptor.o"
+	@echo "... rpc/tcp/tcp_acceptor.i"
+	@echo "... rpc/tcp/tcp_acceptor.s"
+	@echo "... rpc/tcp/tcp_buffer.o"
+	@echo "... rpc/tcp/tcp_buffer.i"
+	@echo "... rpc/tcp/tcp_buffer.s"
+	@echo "... rpc/tcp/tcp_client.o"
+	@echo "... rpc/tcp/tcp_client.i"
+	@echo "... rpc/tcp/tcp_client.s"
+	@echo "... rpc/tcp/tcp_connection.o"
+	@echo "... rpc/tcp/tcp_connection.i"
+	@echo "... rpc/tcp/tcp_connection.s"
+	@echo "... rpc/tcp/tcp_server.o"
+	@echo "... rpc/tcp/tcp_server.i"
+	@echo "... rpc/tcp/tcp_server.s"
 .PHONY : help
 
 

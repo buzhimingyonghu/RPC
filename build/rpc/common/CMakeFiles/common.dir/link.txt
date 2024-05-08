@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../../lib/libcommon.a CMakeFiles/common.dir/config.cpp.o CMakeFiles/common.dir/log.cpp.o CMakeFiles/common.dir/msg_id_util.cpp.o CMakeFiles/common.dir/util.cpp.o
-/usr/bin/ranlib ../../../lib/libcommon.a

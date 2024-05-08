@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libproto.a CMakeFiles/proto.dir/order.pb.cc.o
-/usr/bin/ranlib ../../lib/libproto.a

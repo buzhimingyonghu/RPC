@@ -1,6 +1,0 @@
-cmake_minimum_required(VERSION 3.15)
-project(common)
-link_libraries(tinyxml)
-file(GLOB src ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-set(LIBRARY_OUTPUT_PATH ${LIBPATH})
-add_library(${COMMONLIB} STATIC ${src})

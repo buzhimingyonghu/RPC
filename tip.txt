@@ -61,7 +61,7 @@ int main() {
 }
 
 
-timer.cpp 
+timer.cc 
 void Timer::resetArriveTime()
 当涉及到操作时间、定时器或者其他需要精确计时的场景时，`timespec` 和 `itimerspec` 这两个结构体很有用。
 

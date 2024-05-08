@@ -1,11 +1,11 @@
 #pragma once
 
 #include <memory>
-#include "net_addr.h"
-#include "io_thread.h"
-#include "abstract_coder.h"
-#include "eventloop.h"
-#include "tcp_buffer.h"
+#include "tcp/net_addr.h"
+#include "net/io_thread.h"
+#include "coder/abstract_coder.h"
+#include "net/eventloop.h"
+#include "tcp/tcp_buffer.h"
 namespace rpc
 {
     enum TcpState

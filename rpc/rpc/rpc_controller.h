@@ -5,7 +5,7 @@
 
 #include <string>
 
-#include "net_addr.h"
+#include "tcp/net_addr.h"
 
 namespace rpc
 {

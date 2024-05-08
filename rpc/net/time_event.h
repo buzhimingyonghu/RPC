@@ -1,6 +1,7 @@
 #pragma once
 #include <functional>
 #include <memory>
+#include <string>
 namespace rpc
 {
     class TimerEvent // 基本定时器单位
@@ -8,7 +9,7 @@ namespace rpc
 
     public:
         typedef std::shared_ptr<TimerEvent> s_ptr;
-        TimerEvent(int interval, bool is_repeated, std::function<void()> callback);
+        TimerEvent(int interval, bool is_repeated, std::function<void()> callback, const char *info);
         ~TimerEvent();
         inline int64_t getArriveTime() const
         {
@@ -31,6 +32,7 @@ namespace rpc
             return m_task;
         }
         void resetArriveTime();
+        std::string m_help_info;
 
     private:
         int64_t m_arrive_time;
