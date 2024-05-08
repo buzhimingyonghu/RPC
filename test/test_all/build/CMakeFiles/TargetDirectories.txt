@@ -1,0 +1,8 @@
+/home/nlove/temp/test_all/build/CMakeFiles/interfaceService.dir
+/home/nlove/temp/test_all/build/CMakeFiles/test_all.dir
+/home/nlove/temp/test_all/build/CMakeFiles/edit_cache.dir
+/home/nlove/temp/test_all/build/CMakeFiles/rebuild_cache.dir
+/home/nlove/temp/test_all/build/test_client/CMakeFiles/test_add_test_client.dir
+/home/nlove/temp/test_all/build/test_client/CMakeFiles/test_query_test_client.dir
+/home/nlove/temp/test_all/build/test_client/CMakeFiles/edit_cache.dir
+/home/nlove/temp/test_all/build/test_client/CMakeFiles/rebuild_cache.dir

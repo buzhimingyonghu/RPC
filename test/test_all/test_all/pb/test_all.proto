@@ -1,0 +1,27 @@
+syntax="proto3";
+option cc_generic_services=true;
+
+message addtestRequest{
+    int32 price =1;
+    string goods=2;
+}
+message addtestResponse{
+    int32 ret_code=1;
+    string res_info=2;
+    string order_id=3;
+}
+message querytestRequest{
+    string order_id=1;
+}
+message querytestResponse{
+    int32 ret_code=1;
+    string res_info=2;
+    string order_id=3;
+    int32 price=4;
+    string goods=5;
+}
+
+service TestService{
+    rpc add_test(addtestRequest)returns(addtestResponse);
+    rpc query_test(querytestRequest)returns(querytestResponse);
+}

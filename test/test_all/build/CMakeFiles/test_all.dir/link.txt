@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/test_all.dir/main.cc.o -o ../bin/test_all   -L/usr/local/lib  -L/home/nlove/temp/test_all/lib  -Wl,-rpath,/usr/local/lib:/home/nlove/temp/test_all/lib -lmircorpc -ltinyxml -lprotobuf ../lib/libinterfaceService.so -lmircorpc -ltinyxml -lprotobuf 
